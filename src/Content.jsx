@@ -1,10 +1,19 @@
-import { UsersIndex } from "./Usersindex";
+import { UsersIndex } from "./UsersIndex";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export function Content() {
-  const users = [
-    { id: 1, name: "First", url: "https://via.placeholder.com/150", width: 150, height: 150 },
-    { id: 2, name: "Second", url: "https://via.placeholder.com/300", width: 300, height: 300 },
-  ];
+  const [users, setUsers] = useState([]);
+
+  const handleIndexUsers = () => {
+    console.log("handeIndexUsers");
+    axios.get("http://localhost:3000/users.json").then((response) => {
+      console.log(response.data);
+      setUsers(response.data);
+    });
+  };
+
+  useEffect(handleIndexUsers, []);
 
   return (
     <div>

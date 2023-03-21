@@ -4,9 +4,8 @@ export function UsersIndex(props) {
       {props.users.map((user) => (
         <div key={user.id}>
           <h2>{user.name}</h2>
-          <img src={user.url} />
-          <p>Width: {user.width}</p>
-          <p>Height: {user.height}</p>
+          <img src={user.image_url} />
+          <h3>{user.email}</h3>
         </div>
       ))}
     </div>
