@@ -2,6 +2,7 @@ import { UsersIndex } from "./UsersIndex";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
+import { LogIn } from "./LogIn";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,7 @@ export function Content() {
   return (
     <div>
       <SignUp />
+      <LogIn />
       <UsersIndex users={users} />
     </div>
   );
