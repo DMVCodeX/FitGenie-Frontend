@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
 import { LogIn } from "./LogIn";
 import { LogoutLink } from "./LogoutLink";
+import { ExercisesIndex } from "./ExercisesIndex";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -18,12 +19,25 @@ export function Content() {
 
   useEffect(handleIndexUsers, []);
 
+  const [exercises, setExercises] = useState([]);
+
+  const handleIndexExercises = () => {
+    console.log("handleExercisesIndex");
+    axios.get("http://localhost:3000/exercises.json").then((response) => {
+      console.log(response.data);
+      setExercises(response.data);
+    });
+  };
+
+  useEffect(handleIndexExercises, []);
+
   return (
     <div className="container">
       <SignUp />
       <LogIn />
       <p></p>
       <LogoutLink />
+      <ExercisesIndex exercises={exercises} />
       <UsersIndex users={users} />
     </div>
   );
