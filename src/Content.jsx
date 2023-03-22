@@ -19,7 +19,7 @@ export function Content() {
   useEffect(handleIndexUsers, []);
 
   return (
-    <div>
+    <div className="container">
       <SignUp />
       <LogIn />
       <p></p>
