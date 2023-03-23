@@ -23,7 +23,7 @@ export function SignUp() {
 
   return (
     <div id="signup">
-      <h1>Signup</h1>
+      <h1 className="papyrus-heading">Signup</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>

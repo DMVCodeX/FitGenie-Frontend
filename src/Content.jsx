@@ -5,6 +5,7 @@ import { SignUp } from "./SignUp";
 import { LogIn } from "./LogIn";
 import { LogoutLink } from "./LogoutLink";
 import { ExercisesIndex } from "./ExercisesIndex";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -33,7 +34,7 @@ export function Content() {
   useEffect(handleIndexExercises, []);
 
   return (
-    <div className="container">
+    <div className="container-md">
       <SignUp />
       <LogIn />
       <p></p>
