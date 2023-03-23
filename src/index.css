@@ -2,4 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
+.text-break {
+  white-space:pre-wrap
+}
 

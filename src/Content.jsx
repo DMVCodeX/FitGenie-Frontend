@@ -9,6 +9,7 @@ import { ExercisesIndex } from "./ExercisesIndex";
 export function Content() {
   const [users, setUsers] = useState([]);
 
+  //UserIndex function
   const handleIndexUsers = () => {
     console.log("handeIndexUsers");
     axios.get("http://localhost:3000/users.json").then((response) => {

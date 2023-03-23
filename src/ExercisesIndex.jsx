@@ -6,7 +6,8 @@ export function ExercisesIndex(props) {
         <div key={exercise.id}>
           <h2>{exercise.name}</h2>
           <img src={exercise.image_url} />
-          <p>{exercise.description}</p>
+          <p className="text-break">{exercise.description}</p>
+          <p>Suggested reps: {exercise.reps}</p>
         </div>
       ))}
     </div>
