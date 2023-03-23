@@ -37,7 +37,6 @@ export function Content() {
       <SignUp />
       <LogIn />
       <p></p>
-      <LogoutLink />
       <ExercisesIndex exercises={exercises} />
       <UsersIndex users={users} />
     </div>

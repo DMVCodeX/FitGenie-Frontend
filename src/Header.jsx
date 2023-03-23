@@ -1,3 +1,5 @@
+import { LogoutLink } from "./LogoutLink";
+
 export function Header() {
   return (
     <header>
@@ -68,7 +70,7 @@ export function Header() {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
+                <LogoutLink />
               </li>
             </ul>
             <form className="d-flex" role="search">
