@@ -3,8 +3,15 @@ export function Header() {
     <header>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
+          <a class="navbar-brand" href="#">
+            <img
+              src="https://media.istockphoto.com/id/1221301662/photo/magic-lamp-with-barbell.jpg?b=1&s=170667a&w=0&k=20&c=3MqE8b50G7qWdUPU1uoVClY25chtU5RmlKiJKt8xXEo="
+              alt="Logo"
+              width="42"
+              height="36"
+              class="d-inline-block align-text-top"
+            />
+            FitGenie
           </a>
           <button
             className="navbar-toggler"
