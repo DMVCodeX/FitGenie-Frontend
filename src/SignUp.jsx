@@ -46,7 +46,7 @@ export function SignUp() {
           Password Confirmation: <input name="password_confirmation" type="password" />
           <p></p>
         </div>
-        <button type="submit" className="btn btn-dark">
+        <button type="submit" className="btn btn-outline-secondary">
           Signup
         </button>
       </form>

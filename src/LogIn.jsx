@@ -45,7 +45,7 @@ export function LogIn() {
           Password: <input name="password" type="password" />
           <p></p>
         </div>
-        <button type="submit" className="btn btn-dark">
+        <button type="submit" className="btn btn-outline-secondary">
           Log In
         </button>
       </form>
