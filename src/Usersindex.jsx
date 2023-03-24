@@ -12,7 +12,7 @@ export function UsersIndex(props) {
           <h2>{user.name}</h2>
           <img src={user.image_url} />
           <p>{user.email}</p>
-          <a //interpolate javascript code ${code}
+          <a //interpolate javascript code into html ${code}
             href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${user.name}'s+Workout+&details=&dates=20230322T160000Z%2F20230324T050000Z`}
             target="_blank" //opens in new tab
           >
