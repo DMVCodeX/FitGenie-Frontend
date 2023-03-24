@@ -7,6 +7,7 @@ import { LogoutLink } from "./LogoutLink";
 import { ExercisesIndex } from "./ExercisesIndex";
 import { Routes, Route } from "react-router-dom";
 import { Modal } from "./Modal";
+import ReactPlayer from "react-player";
 
 export function Content() {
   const [users, setUsers] = useState([]);

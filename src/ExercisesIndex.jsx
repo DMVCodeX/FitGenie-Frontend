@@ -8,6 +8,7 @@ export function ExercisesIndex(props) {
           <img src={exercise.image_url} />
           <p className="text-break">{exercise.description}</p>
           <p>Suggested reps: {exercise.reps}</p>
+          <ReactPlayer url={exercise.video_url} />
         </div>
       ))}
     </div>
