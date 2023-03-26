@@ -3,10 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
 import { LogIn } from "./LogIn";
-import { LogoutLink } from "./LogoutLink";
 import { ExercisesIndex } from "./ExercisesIndex";
 import { Routes, Route } from "react-router-dom";
-import { Modal } from "./Modal";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -36,12 +34,12 @@ export function Content() {
 
   return (
     <div className="container-md">
-      <SignUp />
-      <p></p>
-      <LogIn />
-      <p></p>
-      <p></p>
-      <ExercisesIndex exercises={exercises} />
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/users" element={<UsersIndex />} />
+        <Route path="/exercises" element={<ExercisesIndex exercises={exercises} />} />
+      </Routes>
     </div>
   );
 }
