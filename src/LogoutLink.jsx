@@ -1,6 +1,4 @@
 import axios from "axios";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
 
 export function LogoutLink() {
   const handleClick = (event) => {

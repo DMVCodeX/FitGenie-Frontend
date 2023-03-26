@@ -6,6 +6,7 @@ import { LogIn } from "./LogIn";
 import { ExercisesIndex } from "./ExercisesIndex";
 import { Routes, Route } from "react-router-dom";
 import { LogoutLink } from "./LogoutLink";
+import { WorkoutExerciseIndex } from "./WorkoutExerciseIndex";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -38,8 +39,9 @@ export function Content() {
       <Routes>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/users" element={<UsersIndex />} />
+        <Route path="/users" element={<UsersIndex users={users} />} />
         <Route path="/logout" element={<LogoutLink />} />
+        <Route path="/workouts" element={<WorkoutExerciseIndex />} />
         <Route path="/exercises" element={<ExercisesIndex exercises={exercises} />} />
       </Routes>
     </div>

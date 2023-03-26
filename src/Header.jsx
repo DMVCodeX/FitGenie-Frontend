@@ -8,7 +8,7 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <main className="">
-            FitGenie{" "}
+            {" "}
             <img
               src="https://media.istockphoto.com/id/1221301662/photo/magic-lamp-with-barbell.jpg?b=1&s=170667a&w=0&k=20&c=3MqE8b50G7qWdUPU1uoVClY25chtU5RmlKiJKt8xXEo="
               alt="Logo"
@@ -23,6 +23,17 @@ export function Header() {
               <a class="navbar-brand" href="exercises">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/3914/3914460.png"
+                  alt="Logo"
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="/workouts">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/9888/9888290.png"
                   alt="Logo"
                   width="30"
                   height="30"
