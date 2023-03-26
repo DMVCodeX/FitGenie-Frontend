@@ -29,14 +29,14 @@ export function LogIn() {
   };
 
   return (
-    <div id="login">
-      <h1 className="papyrus-heading">Log In</h1>
+    <div className="card" id="login">
+      <h1 className="card-body">Log In</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form className="card-body" onSubmit={handleSubmit}>
         <div>
           Email: <input name="email" type="email" />
           <p></p>
