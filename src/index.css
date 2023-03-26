@@ -22,3 +22,17 @@ html {
   font-family: Papyrus;
   line-height: 1.5;
 }
+
+.centered-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.new-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* set the height of the container to the full viewport height */
+}

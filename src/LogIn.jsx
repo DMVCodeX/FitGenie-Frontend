@@ -49,6 +49,21 @@ export function LogIn() {
           Log In
         </button>
       </form>
+      <p></p>
+      <form className="card-body">
+        <p>
+          Don't have an account yet?{" "}
+          <a href="/signup">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/6238/6238952.png"
+              alt="Logo"
+              width="40"
+              height="40"
+              className="d-inline-block align-text-top"
+            />
+          </a>
+        </p>
+      </form>
     </div>
   );
 }

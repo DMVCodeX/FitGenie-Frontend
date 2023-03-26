@@ -20,12 +20,24 @@ export function Header() {
 
           <ul class="nav justify-content-end">
             <li class="nav-item">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/813/813670.png"
+                  alt="Logo"
+                  width="27"
+                  height="27"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a class="navbar-brand" href="exercises">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/3914/3914460.png"
+                  src="https://cdn-icons-png.flaticon.com/128/2871/2871284.png"
                   alt="Logo"
-                  width="30"
-                  height="30"
+                  width="35"
+                  height="35"
                   className="d-inline-block align-text-top"
                 />
               </a>
@@ -37,6 +49,17 @@ export function Header() {
                   alt="Logo"
                   width="30"
                   height="30"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="/users#">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/615/615075.png"
+                  alt="Logo"
+                  width="40"
+                  height="40"
                   className="d-inline-block align-text-top"
                 />
               </a>

@@ -50,6 +50,21 @@ export function SignUp() {
           Signup
         </button>
       </form>
+      <p></p>
+      <form className="card-body">
+        <p>
+          Have an account?{" "}
+          <a href="/login">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
+              alt="Logo"
+              width="40"
+              height="40"
+              className="d-inline-block align-text-top"
+            />
+          </a>
+        </p>
+      </form>
     </div>
   );
 }
