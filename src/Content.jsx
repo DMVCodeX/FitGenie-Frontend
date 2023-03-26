@@ -5,6 +5,7 @@ import { SignUp } from "./SignUp";
 import { LogIn } from "./LogIn";
 import { ExercisesIndex } from "./ExercisesIndex";
 import { Routes, Route } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -38,6 +39,7 @@ export function Content() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/users" element={<UsersIndex />} />
+        <Route path="/logout" element={<LogoutLink />} />
         <Route path="/exercises" element={<ExercisesIndex exercises={exercises} />} />
       </Routes>
     </div>
