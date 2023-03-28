@@ -11,7 +11,7 @@ export function UserWorkoutsIndex(props) {
         {" "}
         Schedule Workout Routine
         <a
-          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${props.user.name}'s+Workout+&details=&dates=20230322T160000Z%2F20230324T050000Z`}
+          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${props.user.name}'s+Workout+&details=${props.user.name}'s+Workout&dates=20230322T160000Z%2F20230324T050000Z`}
           target="_blank"
         >
           <p></p>
