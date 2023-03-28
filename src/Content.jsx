@@ -10,6 +10,7 @@ import { UserWorkoutsIndex } from "./UserWorkoutsIndex";
 import { Maps } from "./Maps";
 import { Home } from "./Home";
 import { NutritionGuide } from "./NutritionGuide";
+import { MacroCalculator } from "./MacroCalculator";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -52,6 +53,7 @@ export function Content() {
       </head>
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/macrocalculator" element={<MacroCalculator />} />
         <Route path="/map" element={<Maps />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />

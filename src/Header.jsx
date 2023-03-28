@@ -75,6 +75,17 @@ export function Header() {
               </a>
             </li>
             <li class="nav-item">
+              <a class="navbar-brand" href="/macrocalculator">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/3867/3867884.png"
+                  alt="Logo"
+                  width="35"
+                  height="35"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="navbar-brand" href="/users">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/694/694642.png"

@@ -37,7 +37,7 @@ export function LogIn() {
         ))}
       </ul>
       <form className="card-body" onSubmit={handleSubmit}>
-        <div className="ead">
+        <div className="">
           Email: <input name="email" type="email" />
           <p></p>
         </div>

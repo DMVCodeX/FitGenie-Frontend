@@ -300,6 +300,7 @@ export function NutritionGuide() {
                     nutrition guide, you can create a meal plan that supports healthy weight gain and overall health. If
                     you have concerns about weight gain, consult with a registered dietitian or healthcare professional.
                   </li>
+                  <p></p>
                 </ol>
 
                 <p></p>
@@ -308,6 +309,21 @@ export function NutritionGuide() {
           </div>
         </div>
       </div>
+      <p></p>
+      <form className="card-body">
+        <p className="">
+          Check Out Our Macro Calculator{" "}
+          <a href="/macrocalculator">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3867/3867884.png"
+              alt="Logo"
+              width="45"
+              height="45"
+              className="d-inline-block align-text-top"
+            />
+          </a>
+        </p>
+      </form>
     </div>
   );
 }
