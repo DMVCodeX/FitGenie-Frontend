@@ -2,7 +2,7 @@ import ReactPlayer from "react-player";
 
 export function UserWorkoutsIndex(props) {
   return (
-    <div className="head">
+    <div className="">
       <p></p>
 
       <h1>Your Workouts</h1>

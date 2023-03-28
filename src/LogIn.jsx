@@ -29,7 +29,7 @@ export function LogIn() {
   };
 
   return (
-    <div className="card head" id="login">
+    <div className="card" id="login">
       <h1 className="card-body ">Log In</h1>
       <ul>
         {errors.map((error) => (

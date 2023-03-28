@@ -2,7 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+#root {
+  font-family: 'Exo 2', sans-serif;
+}
 
 .verdana-heading {
   font-family: Verdana, Geneva, Tahoma, sans-serif;

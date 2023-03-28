@@ -2,7 +2,7 @@ import ReactPlayer from "react-player";
 
 export function ExercisesIndex(props) {
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-4 head">
+    <div className="row row-cols-1 row-cols-md-2 g-4">
       {props.exercises.map((exercise) => (
         <div className="card" key={exercise.id}>
           <h2 className="card-title">{exercise.name}</h2>

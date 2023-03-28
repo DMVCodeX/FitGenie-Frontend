@@ -9,6 +9,7 @@ import { LogoutLink } from "./LogoutLink";
 import { UserWorkoutsIndex } from "./UserWorkoutsIndex";
 import { Maps } from "./Maps";
 import { Home } from "./Home";
+import { NutritionGuide } from "./NutritionGuide";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -54,6 +55,7 @@ export function Content() {
         <Route path="/map" element={<Maps />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/nutrition" element={<NutritionGuide />} />
         <Route path="/users" element={<UsersIndex users={users} />} />
         <Route path="/logout" element={<LogoutLink />} />
         <Route path="/userworkouts" element={<UserWorkoutsIndex user={currentUser} />} />

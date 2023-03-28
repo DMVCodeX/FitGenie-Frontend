@@ -8,7 +8,7 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <ul class="nav justify-content-end">
-            <h2 className="head">FitGenie </h2>
+            <h2 className="">FitGenie </h2>
             <li class="nav-item">
               <a class="navbar-brand" href="/home">
                 <img
@@ -48,6 +48,17 @@ export function Header() {
               <a class="navbar-brand" href="/userworkouts">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/7118/7118261.png"
+                  alt="Logo"
+                  width="35"
+                  height="35"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="/nutrition">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/4725/4725744.png"
                   alt="Logo"
                   width="35"
                   height="35"
