@@ -3,7 +3,9 @@ html {
 }
 
 .text-break {
-  white-space:pre-wrap
+  white-space:pre-wrap;
+  text-align: center;
+  
 }
 
 

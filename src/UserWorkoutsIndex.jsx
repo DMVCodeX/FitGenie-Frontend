@@ -1,4 +1,4 @@
-export function WorkoutExerciseIndex() {
+export function UserWorkoutsIndex() {
   return (
     <div>
       <h1>HI</h1>

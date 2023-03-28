@@ -6,9 +6,10 @@ export function UsersIndex(props) {
   const formattedDate = `${month}-${day}-${year}`;
 
   return (
-    <div>
+    <div className="row row-cols-1 row-cols-md-3 g-4">
       {props.users.map((user) => (
-        <div key={user.id}>
+        <div className="card" key={user.id}>
+          <p></p>
           <h2>{user.name}</h2>
           <img src={user.image_url} />
           <p>{user.email}</p>
@@ -20,6 +21,9 @@ export function UsersIndex(props) {
             Add a Workout to Google Calender{" "}
           </a>
           <p></p>
+          <button type="submit" className="btn btn-outline-secondary">
+            Follow
+          </button>
         </div>
       ))}
     </div>
