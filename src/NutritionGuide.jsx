@@ -1,8 +1,12 @@
 export function NutritionGuide() {
   return (
     <div>
-      <h1 className="">Nurtion Guide</h1>
-      <p></p>
+      <h1 className="">Nurtion Guides</h1>
+      <img
+        className="container-fluid"
+        src="https://media.istockphoto.com/id/860528672/photo/different-types-of-food-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=eYYup_iPXx4S-_9eNsJ6vKoP650jsWk4D3M5dzbzLyA="
+        alt=""
+      />
 
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
