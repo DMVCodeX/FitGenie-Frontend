@@ -8,7 +8,8 @@ export function ExercisesIndex(props) {
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {props.exercises.map((exercise) => (
           <div className="card" key={exercise.id}>
-            <h2 className="card-title">{exercise.name}</h2>
+            <p></p>
+            <h2 className="card-title center-text">{exercise.name}</h2>
             <img className="card-img-top" src={exercise.image_url} />
             <p></p>
             <p className="text-line-break">{exercise.description}</p>

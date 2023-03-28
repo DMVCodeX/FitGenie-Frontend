@@ -5,9 +5,9 @@ export function UserWorkoutsIndex(props) {
     <div className="">
       <p></p>
 
-      <h1>Your Workouts</h1>
-      <h2>{props.user.name}</h2>
-      <p>
+      <h1>{props.user.name}'s' Workouts</h1>
+
+      <h5>
         {" "}
         Schedule Workout Routine
         <a
@@ -23,7 +23,7 @@ export function UserWorkoutsIndex(props) {
             className="d-inline-block align-text-top"
           />
         </a>
-      </p>
+      </h5>
       <p></p>
 
       <div className="accordion" id="accordionExample">
@@ -39,7 +39,7 @@ export function UserWorkoutsIndex(props) {
                 aria-controls="collapseTwo"
               >
                 <p></p>
-                {workout.name}
+                <h2>{workout.name}</h2>
                 <p></p>
               </button>
             </h1>
@@ -52,7 +52,7 @@ export function UserWorkoutsIndex(props) {
                 {workout.workout_exercises.map((workoutExercise) => (
                   <div>
                     <p></p>
-                    <h2 classNameName="center-text">{workoutExercise.exercise.name}</h2>
+                    <h1 className="center-text">{workoutExercise.exercise.name}</h1>
                     <img className="centered-image" src={workoutExercise.exercise.image_url} alt="" />
                     <p className="text-line-break">{workoutExercise.exercise.description}</p>
                     <p>Suggested reps: {workoutExercise.exercise.reps}</p>
