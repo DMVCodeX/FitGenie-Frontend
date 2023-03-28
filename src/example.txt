@@ -1,0 +1,12 @@
+{props.user.workouts.map((workout) => (
+        <div key={workout.id}>
+          <h2>{workout.name}</h2>
+          {workout.workout_exercises.map((workoutExercise) => (
+            <div>
+              <p>{workoutExercise.exercise.name}</p>
+              <img src={workoutExercise.exercise.image_url} alt="" />
+              <p>{workoutExercise.exercise.description}</p>
+            </div>
+          ))}
+        </div>
+      ))}

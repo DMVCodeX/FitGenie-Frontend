@@ -9,7 +9,7 @@ export function Header() {
         <div className="container-fluid">
           <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/813/813670.png"
                   alt="Logo"

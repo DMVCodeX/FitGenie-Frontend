@@ -8,11 +8,7 @@ html {
   min-height: 100vh;  
 };
 
-.text-break {
-  white-space:pre-wrap;
-  text-align: center;
-  
-}
+
 
 
 .verdana-heading {
@@ -49,3 +45,10 @@ html {
   text-align: center;
   
 }
+
+.text-line-break {
+  white-space: pre-wrap !important;
+  text-align: center; 
+  
+}
+
