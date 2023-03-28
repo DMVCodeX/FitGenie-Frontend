@@ -31,9 +31,16 @@ export function NutritionGuide() {
                 <h2 className="center-text">Weight Loss Guide</h2>
                 <img
                   className="centered-image"
-                  src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNxdWF0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src="https://media.istockphoto.com/id/1363586390/photo/yellow-tape-measure-on-glass-bathroom-scale.jpg?b=1&s=170667a&w=0&k=20&c=9UlnI82gY8_CoZJXn2VCEyipfpb-a9i9M2QSDBoosC4="
                   alt=""
                 />
+                <p></p>
+                <p className="center-text">
+                  Nutrition plays a crucial role in weight loss. By eating a balanced diet that includes the right
+                  amount of macronutrients (carbohydrates, proteins, and fats) and micronutrients (vitamins and
+                  minerals), you can create a calorie deficit that will help you lose weight. Here is a detailed
+                  nutrition guide for weight loss:
+                </p>
                 <ol className="text-line-break">
                   <li>
                     Calculate your calorie needs: To lose weight, you need to consume fewer calories than you burn. You
@@ -119,12 +126,20 @@ export function NutritionGuide() {
                 <h2 className="center-text">Toning Guide</h2>
                 <img
                   className="centered-image"
-                  src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNxdWF0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src="https://media.istockphoto.com/id/1337244064/photo/shot-of-two-young-gym-buddies-doing-core-strengthening-on-the-floor-at-the-gym.jpg?s=612x612&w=0&k=20&c=cWsLQ9dahWxmiBHzvaCf4TrIsimx81J46lR5w350bys="
                   alt=""
                 />
-                <p className="text-line-break">name</p>
+                <p></p>
+                <p className="text-line-break">
+                  Toning refers to building lean muscle mass and reducing body fat to achieve a defined and sculpted
+                  physique. Proper nutrition is essential for toning as it supports muscle growth and helps to burn
+                  excess body fat. Here is a detailed nutrition guide for toning:
+                </p>
 
                 <p></p>
+                <ol className="text-line-break">
+                  <li>Description</li>
+                </ol>
               </div>
             </div>
           </div>
