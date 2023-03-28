@@ -9,7 +9,7 @@ export function LogoutLink() {
   };
 
   return (
-    <a className="" href="#" onClick={handleClick}>
+    <a href="#" onClick={handleClick}>
       <img
         src="https://cdn-icons-png.flaticon.com/512/182/182448.png"
         alt="Logo"

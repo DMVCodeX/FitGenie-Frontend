@@ -88,7 +88,7 @@ export function Header() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="navbar-brand" href="/login">
+              <a class="navbar-brand" href="#">
                 <LogoutLink />
               </a>
             </li>

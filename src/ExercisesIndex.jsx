@@ -13,7 +13,7 @@ export function ExercisesIndex(props) {
           <ReactPlayer className="centered-image" url={exercise.video_url} />
           <p></p>
           <button type="submit" className="btn btn-outline-secondary">
-            Save
+            Add to Workout
           </button>
           <p></p>
         </div>

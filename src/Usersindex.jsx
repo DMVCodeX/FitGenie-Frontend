@@ -8,8 +8,8 @@ export function UsersIndex(props) {
           <img src={user.image_url} />
           <p></p>
 
-          <button class="btn btn-light">
-            <a class="navbar-brand" href="/">
+          <button className="btn btn-light">
+            <a className="navbar-brand" href="/">
               <img
                 src="https://cdn-icons-png.flaticon.com/128/6238/6238709.png"
                 alt="Logo"
