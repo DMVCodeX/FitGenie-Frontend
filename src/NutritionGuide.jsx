@@ -15,16 +15,16 @@ export function NutritionGuide() {
               className="btn btn-outline-secondary container-fluid"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target={"#collapseTwo"}
+              data-bs-target="#collapseOne"
               aria-expanded="false"
-              aria-controls="collapseTwo"
+              aria-controls="collapseOne"
             >
               <p></p>
               <h1>Weight Loss</h1>
               <p></p>
             </button>
           </h1>
-          <div id={"collapseTwo"} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div id={"collapseOne"} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div className="accordion-body">
               <div>
                 <p></p>
@@ -110,7 +110,7 @@ export function NutritionGuide() {
               className="btn btn-outline-secondary container-fluid"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target={"#collapseTwo"}
+              data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
@@ -138,7 +138,68 @@ export function NutritionGuide() {
 
                 <p></p>
                 <ol className="text-line-break">
-                  <li>Description</li>
+                  <li>
+                    Calculate your calorie needs: To build muscle and reduce body fat, you need to consume the right
+                    amount of calories. You can use online calorie calculators or consult a registered dietitian to
+                    determine your daily calorie needs based on your age, gender, height, weight, and activity level.
+                  </li>
+
+                  <li>
+                    Increase protein intake: Protein is essential for building and repairing muscles. Aim for 1-1.5
+                    grams of protein per pound of body weight per day. Good sources of protein include lean meats, fish,
+                    poultry, beans, lentils, tofu, and low-fat dairy products.
+                  </li>
+
+                  <li>
+                    Include complex carbohydrates: Complex carbohydrates provide energy for your workouts and support
+                    muscle growth. Good sources of complex carbohydrates include whole grains, fruits, vegetables, and
+                    legumes.
+                  </li>
+
+                  <li>
+                    Choose healthy fats: Healthy fats such as avocado, nuts, seeds, and olive oil are important for
+                    hormone regulation and overall health. However, limit your intake of saturated and trans fats, which
+                    can raise your cholesterol levels and increase your risk of heart disease.
+                  </li>
+
+                  <li>
+                    Eat regularly: To maintain a steady supply of energy for your workouts and support muscle growth,
+                    eat three to four meals per day and include snacks as needed.
+                  </li>
+
+                  <li>
+                    Time your meals: Timing your meals can help optimize muscle growth and recovery. Eat a meal
+                    containing protein and carbohydrates within 30 minutes of finishing your workout, and aim to eat
+                    protein-rich foods throughout the day.
+                  </li>
+
+                  <li>
+                    Hydrate: Adequate hydration is important for muscle recovery and overall health. Drink at least
+                    eight cups of water per day and more if you are exercising.
+                  </li>
+
+                  <li>
+                    Supplement wisely: Some supplements such as whey protein and creatine may be beneficial for muscle
+                    growth. However, consult with a registered dietitian or healthcare professional before taking any
+                    supplements.
+                  </li>
+
+                  <li>
+                    Avoid processed foods: Processed foods such as sugary drinks, fast food, and packaged snacks are
+                    often high in calories, added sugars, and unhealthy fats. Instead, focus on whole foods and
+                    home-cooked meals.
+                  </li>
+
+                  <li>
+                    Practice portion control: Overeating can hinder your progress towards toning. Use measuring cups or
+                    a food scale to control your portion sizes and avoid mindless snacking.
+                  </li>
+
+                  <li>
+                    Remember, toning is a gradual process that requires consistency, dedication, and patience. By
+                    following this nutrition guide, you can create a healthy and sustainable eating plan that supports
+                    your fitness goals.
+                  </li>
                 </ol>
               </div>
             </div>
@@ -150,23 +211,24 @@ export function NutritionGuide() {
               className="btn btn-outline-secondary container-fluid"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target={"#collapseTwo"}
+              data-bs-target="#collapseThree"
               aria-expanded="false"
-              aria-controls="collapseTwo"
+              aria-controls="collapseThree"
             >
               <p></p>
+
               <h1>Weight Gain</h1>
               <p></p>
             </button>
           </h1>
-          <div id={"collapseTwo"} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div id={"collapseThree"} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div className="accordion-body">
               <div>
                 <p></p>
                 <h2 className="center-text">Weight Gain Guide</h2>
                 <img
                   className="centered-image"
-                  src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNxdWF0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8d2VpZ2h0JTIwbGlmdGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                   alt=""
                 />
                 <p className="text-line-break">name</p>

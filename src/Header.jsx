@@ -5,10 +5,18 @@ import { Routes, Route } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <ul class="nav justify-content-end">
             <h2 className="">FitGenie </h2>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5169/5169662.png"
+              alt="Logo"
+              width="35"
+              height="35"
+              className="d-inline-block align-text-top"
+            />
+
             <li class="nav-item">
               <a class="navbar-brand" href="/home">
                 <img
