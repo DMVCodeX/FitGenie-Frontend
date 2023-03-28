@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import { LogoutLink } from "./LogoutLink";
 import { UserWorkoutsIndex } from "./UserWorkoutsIndex";
 import { Maps } from "./Maps";
+import { Home } from "./Home";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -46,7 +47,8 @@ export function Content() {
   return (
     <div className="container-md">
       <Routes>
-        <Route path="/" element={<Maps />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/map" element={<Maps />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/users" element={<UsersIndex users={users} />} />

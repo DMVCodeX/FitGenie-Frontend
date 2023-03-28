@@ -9,12 +9,24 @@ export function Header() {
         <div className="container-fluid">
           <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand" href="/home">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/813/813670.png"
                   alt="Logo"
                   width="27"
                   height="27"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="navbar-brand" href="/map">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/5467/5467110.png"
+                  alt="Logo"
+                  width="32"
+                  height="32"
                   className="d-inline-block align-text-top"
                 />
               </a>
