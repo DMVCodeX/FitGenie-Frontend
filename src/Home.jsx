@@ -1,9 +1,11 @@
 export function Home() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid head">
       <head>
         <style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');</style>
       </head>
+      <p></p>
+      <h1>Endurance | Determination | Consistency </h1>
       <p></p>
 
       <p></p>
