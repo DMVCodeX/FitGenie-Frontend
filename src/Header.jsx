@@ -43,7 +43,7 @@ export function Header() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="navbar-brand" href="/workouts">
+              <a class="navbar-brand" href="/userworkouts">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/9888/9888290.png"
                   alt="Logo"

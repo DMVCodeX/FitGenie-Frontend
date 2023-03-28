@@ -38,3 +38,8 @@ html {
   align-items: center;
   height: 100vh; /* set the height of the container to the full viewport height */
 }
+
+.center-text {
+  text-align: center;
+  
+}
