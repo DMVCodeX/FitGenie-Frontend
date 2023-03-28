@@ -11,10 +11,10 @@ export function LogoutLink() {
   return (
     <a className="" href="#" onClick={handleClick}>
       <img
-        src="https://cdn-icons-png.flaticon.com/128/4803/4803246.png"
+        src="https://cdn-icons-png.flaticon.com/512/5543/5543009.png"
         alt="Logo"
-        width="25"
-        height="25"
+        width="35"
+        height="35"
         className="d-inline-block align-text-top"
       />
     </a>

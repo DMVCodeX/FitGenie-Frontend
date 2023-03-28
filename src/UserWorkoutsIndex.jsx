@@ -10,7 +10,7 @@ export function UserWorkoutsIndex(props) {
       <div class="accordion" id="accordionExample">
         {props.user.workouts.map((workout) => (
           <div class="accordion-item">
-            <h2 class="accordion-header">
+            <h1 class="accordion-header">
               <button
                 className="btn btn-outline-secondary container-fluid"
                 type="button"
@@ -23,7 +23,7 @@ export function UserWorkoutsIndex(props) {
                 {workout.name}
                 <p></p>
               </button>
-            </h2>
+            </h1>
             <div id={"collapseTwo" + workout.id} class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 {workout.workout_exercises.map((workoutExercise) => (

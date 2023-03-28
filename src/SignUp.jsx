@@ -56,7 +56,7 @@ export function SignUp() {
           Have an account?{" "}
           <a href="/login">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
+              src="https://cdn-icons-png.flaticon.com/128/6239/6239002.png"
               alt="Logo"
               width="40"
               height="40"

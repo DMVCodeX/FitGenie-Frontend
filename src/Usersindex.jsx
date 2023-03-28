@@ -24,13 +24,18 @@ export function UsersIndex(props) {
               />
             </a>
           </p>
-          <p></p>
-          <p></p>
-          <button type="submit" className="btn btn-outline-secondary">
-            Follow
+
+          <button class="btn btn-light">
+            <a class="navbar-brand" href="/">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/6238/6238787.png"
+                alt="Logo"
+                width="90"
+                height="90"
+                className="d-inline-block align-text-top"
+              />
+            </a>
           </button>
-          <p></p>
-          <p className="card-footer"></p>
         </div>
       ))}
     </div>
