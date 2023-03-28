@@ -46,6 +46,9 @@ export function Content() {
 
   return (
     <div className="container-md">
+      <head>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');</style>
+      </head>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/map" element={<Maps />} />

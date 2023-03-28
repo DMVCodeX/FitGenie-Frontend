@@ -8,6 +8,7 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <ul class="nav justify-content-end">
+            <h2 className="head">FitGenie </h2>
             <li class="nav-item">
               <a class="navbar-brand" href="/home">
                 <img

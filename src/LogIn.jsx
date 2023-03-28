@@ -29,19 +29,19 @@ export function LogIn() {
   };
 
   return (
-    <div className="card" id="login">
-      <h1 className="card-body">Log In</h1>
+    <div className="card head" id="login">
+      <h1 className="card-body ">Log In</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
       <form className="card-body" onSubmit={handleSubmit}>
-        <div>
+        <div className="ead">
           Email: <input name="email" type="email" />
           <p></p>
         </div>
-        <div>
+        <div className="">
           Password: <input name="password" type="password" />
           <p></p>
         </div>
@@ -51,7 +51,7 @@ export function LogIn() {
       </form>
       <p></p>
       <form className="card-body">
-        <p>
+        <p className="">
           Don't have an account yet?{" "}
           <a href="/signup">
             <img
