@@ -57,8 +57,8 @@ export function LogIn() {
             <img
               src="https://cdn-icons-png.flaticon.com/128/6239/6239065.png"
               alt="Logo"
-              width="40"
-              height="40"
+              width="45"
+              height="45"
               className="d-inline-block align-text-top"
             />
           </a>

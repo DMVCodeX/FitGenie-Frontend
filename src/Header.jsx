@@ -11,7 +11,7 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="/home">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/10043/10043293.png"
+                  src="https://cdn-icons-png.flaticon.com/128/10181/10181480.png"
                   alt="Logo"
                   width="35"
                   height="35"
@@ -23,7 +23,7 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="/map">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/4053/4053888.png"
+                  src="https://cdn-icons-png.flaticon.com/512/4053/4053871.png"
                   alt="Logo"
                   width="32"
                   height="32"
@@ -35,7 +35,7 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="exercises">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/7489/7489817.png"
+                  src="https://cdn-icons-png.flaticon.com/512/2928/2928158.png"
                   alt="Logo"
                   width="35"
                   height="35"
@@ -46,10 +46,10 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="/userworkouts">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/10163/10163844.png"
+                  src="https://cdn-icons-png.flaticon.com/128/7118/7118261.png"
                   alt="Logo"
-                  width="32"
-                  height="32"
+                  width="35"
+                  height="35"
                   className="d-inline-block align-text-top"
                 />
               </a>
@@ -57,7 +57,7 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="/users">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/9322/9322366.png"
+                  src="https://cdn-icons-png.flaticon.com/128/694/694642.png"
                   alt="Logo"
                   width="40"
                   height="40"
@@ -68,10 +68,10 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="signup">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/6239/6239065.png"
+                  src="https://cdn-icons-png.flaticon.com/512/6238/6238952.png"
                   alt="Logo"
-                  width="40"
-                  height="40"
+                  width="42"
+                  height="42"
                   className="d-inline-block align-text-top"
                 />
               </a>
@@ -79,10 +79,10 @@ export function Header() {
             <li class="nav-item">
               <a class="navbar-brand" href="/login">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/6239/6239002.png"
+                  src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
                   alt="Logo"
-                  width="40"
-                  height="40"
+                  width="42"
+                  height="42"
                   className="d-inline-block align-text-top"
                 />
               </a>

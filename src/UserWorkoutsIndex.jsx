@@ -4,7 +4,25 @@ export function UserWorkoutsIndex(props) {
   return (
     <div>
       <p></p>
+
       <h1>{props.user.name}'s Workouts</h1>
+      <p>
+        {" "}
+        Schedule Workout Routine
+        <a
+          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${props.user.name}'s+Workout+&details=&dates=20230322T160000Z%2F20230324T050000Z`}
+          target="_blank"
+        >
+          <p></p>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2693/2693507.png"
+            alt="Logo"
+            width="50"
+            height="50"
+            className="d-inline-block align-text-top"
+          />
+        </a>
+      </p>
       <p></p>
 
       <div class="accordion" id="accordionExample">

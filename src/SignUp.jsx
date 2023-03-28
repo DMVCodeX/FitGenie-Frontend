@@ -58,8 +58,8 @@ export function SignUp() {
             <img
               src="https://cdn-icons-png.flaticon.com/128/6239/6239002.png"
               alt="Logo"
-              width="40"
-              height="40"
+              width="45"
+              height="45"
               className="d-inline-block align-text-top"
             />
           </a>
