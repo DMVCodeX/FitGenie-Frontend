@@ -7,17 +7,6 @@ export function Header() {
     <header>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <main className="">
-            {" "}
-            <img
-              src="https://media.istockphoto.com/id/1221301662/photo/magic-lamp-with-barbell.jpg?b=1&s=170667a&w=0&k=20&c=3MqE8b50G7qWdUPU1uoVClY25chtU5RmlKiJKt8xXEo="
-              alt="Logo"
-              width="90"
-              height="70"
-              className="d-inline-block align-text-top"
-            />
-          </main>
-
           <ul class="nav justify-content-end">
             <li class="nav-item">
               <a class="navbar-brand" href="#">

@@ -3,10 +3,6 @@ import ReactPlayer from "react-player";
 export function ExercisesIndex(props) {
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4">
-      <p></p>
-      <h1 className="verdana-heading">Exercises</h1>
-      <p></p>
-
       {props.exercises.map((exercise) => (
         <div className="card" key={exercise.id}>
           <h2 className="card-title">{exercise.name}</h2>
@@ -19,6 +15,7 @@ export function ExercisesIndex(props) {
           <button type="submit" className="btn btn-outline-secondary">
             Save
           </button>
+          <p></p>
         </div>
       ))}
     </div>
