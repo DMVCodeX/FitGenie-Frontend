@@ -315,7 +315,7 @@ export function NutritionGuide() {
           Check Out Our Macro Calculator{" "}
           <a href="/macrocalculator">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/3867/3867884.png"
+              src="https://cdn-icons-png.flaticon.com/128/3870/3870545.png"
               alt="Logo"
               width="45"
               height="45"

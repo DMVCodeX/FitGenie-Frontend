@@ -49,7 +49,7 @@ export function MacroCalculator() {
                 Check Out Our Nutrition Guides{" "}
                 <a href="/nutrition">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/128/4725/4725744.png"
+                    src="https://cdn-icons-png.flaticon.com/128/5033/5033206.png"
                     alt="Logo"
                     width="45"
                     height="45"

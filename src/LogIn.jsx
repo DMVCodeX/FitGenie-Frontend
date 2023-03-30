@@ -38,13 +38,20 @@ export function LogIn() {
       </ul>
       <form className="card-body" onSubmit={handleSubmit}>
         <div className="">
-          Email: <input name="email" type="email" />
+          Email: <input className="form-control" name="email" type="email" />
           <p></p>
         </div>
         <div className="">
-          Password: <input name="password" type="password" />
+          Password: <input className="form-control" name="password" type="password" />
           <p></p>
         </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dropdownCheck2" />
+          <label class="form-check-label" for="dropdownCheck2">
+            Remember Me
+          </label>
+        </div>
+        <p></p>
         <button type="submit" className="btn btn-outline-secondary">
           Log In
         </button>

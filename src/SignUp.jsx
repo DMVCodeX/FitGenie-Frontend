@@ -31,19 +31,19 @@ export function SignUp() {
       </ul>
       <form className="card-body" onSubmit={handleSubmit}>
         <div>
-          Name: <input name="name" type="text" />
+          Name: <input className="form-control" name="name" type="text" />
           <p></p>
         </div>
         <div>
-          Email: <input name="email" type="email" />
+          Email: <input className="form-control" name="email" type="email" />
           <p></p>
         </div>
         <div>
-          Password: <input name="password" type="password" />
+          Password: <input className="form-control" name="password" type="password" />
           <p></p>
         </div>
         <div>
-          Password Confirmation: <input name="password_confirmation" type="password" />
+          Password Confirmation: <input className="form-control" name="password_confirmation" type="password" />
           <p></p>
         </div>
         <button type="submit" className="btn btn-outline-secondary">
