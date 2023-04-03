@@ -10,9 +10,16 @@ export function MacroCalculator() {
   const [fats, setFats] = useState("");
 
   function calculateMacros() {
-    const protein = setProtein(protein);
-    const carbs = setCarbs(carbs);
-    const fats = setFats(fats);
+    // calculate macros based on Harris-Benedict formula
+    const bmr = 10 * weight + 6.25 * height - 5 * age;
+    const tdee = bmr * activityLevel;
+    const protein = 0.8 * weight;
+    const fats = (0.3 * tdee) / 9;
+    const carbs = (tdee - protein * 4 - fats * 9) / 4;
+
+    setProtein(protein.toFixed(1));
+    setCarbs(carbs.toFixed(1));
+    setFats(fats.toFixed(1));
   }
 
   return (
@@ -39,28 +46,28 @@ export function MacroCalculator() {
             Calculate Macros
           </button>
           <p></p>
-          <div>
-            <p>Protein: {protein}</p>
-            <p>Carbs: {carbs}</p>
-            <p>Fats: {fats}</p>
-            <p></p>
-            <form className="card-body">
-              <p className="">
-                Check Out Our Nutrition Guides{" "}
-                <a href="/nutrition">
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/128/5033/5033206.png"
-                    alt="Logo"
-                    width="45"
-                    height="45"
-                    className="d-inline-block align-text-top"
-                  />
-                </a>
-              </p>
-            </form>
-          </div>
+          <p>Protein: {protein}</p>
+          <p>Carbs: {carbs}</p>
+          <p>Fats: {fats}</p>
+          <p></p>
         </form>
       </div>
+      <p></p>
+
+      <form className="">
+        <p className="">
+          Check Out Our Nutrition Guides{" "}
+          <a href="/nutrition">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5033/5033206.png"
+              alt="Logo"
+              width="45"
+              height="45"
+              className="d-inline-block align-text-top"
+            />
+          </a>
+        </p>
+      </form>
     </div>
   );
 }
