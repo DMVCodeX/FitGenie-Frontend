@@ -28,14 +28,30 @@ export function MacroCalculator() {
       <div className="card">
         <p></p>
         <form className="card-body">
-          Weight: <input name="weight" type="text" value={weight} onChange={(e) => setWeight(e.target.value)} />
+          Weight:{" "}
+          <input
+            className="form-control"
+            name="weight"
+            type="text"
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+          />
           <p></p>
-          Height: <input name="height" type="text" value={height} onChange={(e) => setHeight(e.target.value)} />
+          Height:{" "}
+          <input
+            className="form-control"
+            name="height"
+            type="text"
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+          />
           <p></p>
-          Age: <input name="age" type="text" value={age} onChange={(e) => setAge(e.target.value)} />
+          Age:{" "}
+          <input className="form-control" name="age" type="text" value={age} onChange={(e) => setAge(e.target.value)} />
           <p></p>
           Activity Level:{" "}
           <input
+            className="form-control"
             name="activity-level"
             type="text"
             value={activityLevel}
