@@ -50,13 +50,16 @@ export function MacroCalculator() {
           <input className="form-control" name="age" type="text" value={age} onChange={(e) => setAge(e.target.value)} />
           <p></p>
           Activity Level:{" "}
-          <input
-            className="form-control"
-            name="activity-level"
-            type="text"
-            value={activityLevel}
-            onChange={(e) => setActivityLevel(e.target.value)}
-          />
+          <div>
+            {" "}
+            <input
+              className="form-control"
+              name="activity-level"
+              type="text"
+              value={activityLevel}
+              onChange={(e) => setActivityLevel(e.target.value)}
+            />
+          </div>
           <p></p>
           <button className="btn btn-outline-secondary" onClick={calculateMacros}>
             Calculate Macros
