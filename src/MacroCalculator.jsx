@@ -9,8 +9,9 @@ export function MacroCalculator() {
   const [carbs, setCarbs] = useState("");
   const [fats, setFats] = useState("");
 
-  function calculateMacros() {
+  function calculateMacros(event) {
     // calculate macros based on Harris-Benedict formula
+    event.preventDefault();
     const bmr = 10 * weight + 6.25 * height - 5 * age;
     const tdee = bmr * activityLevel;
     const protein = 0.8 * weight;
