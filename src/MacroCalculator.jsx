@@ -12,15 +12,22 @@ export function MacroCalculator() {
   function calculateMacros(event) {
     // calculate macros based on Harris-Benedict formula
     event.preventDefault();
-    const bmr = 10 * weight + 6.25 * height - 5 * age;
+    console.log(activityLevel);
+    const bmr = 10 * weight + 6.25 * parseInt(height.split("'")[0] * 12) + parseInt(height.split("'")[1]) - 5 * age;
+    console.log(age);
+    console.log(weight);
+    console.log(height);
     const tdee = bmr * activityLevel;
-    const protein = 0.8 * weight;
-    const fats = (0.3 * tdee) / 9;
-    const carbs = (tdee - protein * 4 - fats * 9) / 4;
+    const proteinValue = 0.8 * weight;
+    console.log(tdee);
+    const fatsValue = (0.3 * tdee) / 9;
+    const carbsValue = (tdee - proteinValue * 4 - fatsValue * 9) / 4;
+    console.log(fatsValue);
+    console.log(carbsValue);
 
-    setProtein(protein.toFixed(1));
-    setCarbs(carbs.toFixed(1));
-    setFats(fats.toFixed(1));
+    setProtein(proteinValue.toFixed(1));
+    setCarbs(carbsValue.toFixed(1));
+    setFats(fatsValue.toFixed(1));
   }
 
   return (
@@ -29,7 +36,9 @@ export function MacroCalculator() {
       <div className="card">
         <p></p>
         <form className="card-body">
-          Weight:{" "}
+          <label className="form-label" for="weight">
+            Weight:
+          </label>
           <input
             className="form-control"
             name="weight"
@@ -38,7 +47,9 @@ export function MacroCalculator() {
             onChange={(e) => setWeight(e.target.value)}
           />
           <p></p>
-          Height:{" "}
+          <label className="form-label" for="height">
+            Height:
+          </label>
           <input
             className="form-control"
             name="height"
@@ -47,22 +58,30 @@ export function MacroCalculator() {
             onChange={(e) => setHeight(e.target.value)}
           />
           <p></p>
-          Age:{" "}
+          <label className="form-label" for="age">
+            Age:
+          </label>
           <input className="form-control" name="age" type="text" value={age} onChange={(e) => setAge(e.target.value)} />
           <p></p>
-          Activity Level:{" "}
-          <div>
-            {" "}
-            <input
-              className="form-control"
-              name="activity-level"
-              type="text"
+
+          <div class="mb-3">
+            <label className="form-label" for="activity-level">
+              Activity Level:
+            </label>
+            <select
               value={activityLevel}
               onChange={(e) => setActivityLevel(e.target.value)}
-            />
+              id="activity-level"
+              class="form-select"
+            >
+              <option value={1.2}>Sedentary</option>
+              <option value={1.375}>Light</option>
+              <option value={1.55}>Moderate</option>
+            </select>
           </div>
+
           <p></p>
-          <button className="btn btn-outline-secondary" onClick={calculateMacros}>
+          <button className="btn btn-outline-secondary mt-1" onClick={calculateMacros}>
             Calculate Macros
           </button>
           <p></p>
