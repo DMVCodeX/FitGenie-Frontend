@@ -29,7 +29,7 @@ export function MacroCalculator() {
       <div className="card">
         <p></p>
         <form className="card-body">
-          <label className="form-label" for="weight">
+          <label className="form-label" htmlFor="weight">
             Weight:
           </label>
           <input
@@ -40,7 +40,7 @@ export function MacroCalculator() {
             onChange={(e) => setWeight(e.target.value)}
           />
           <p></p>
-          <label className="form-label" for="height">
+          <label className="form-label" htmlFor="height">
             Height:
           </label>
           <input
@@ -51,21 +51,21 @@ export function MacroCalculator() {
             onChange={(e) => setHeight(e.target.value)}
           />
           <p></p>
-          <label className="form-label" for="age">
+          <label className="form-label" htmlFor="age">
             Age:
           </label>
           <input className="form-control" name="age" type="text" value={age} onChange={(e) => setAge(e.target.value)} />
           <p></p>
 
-          <div class="mb-3">
-            <label className="form-label" for="activity-level">
+          <div className="mb-3">
+            <label className="form-label" htmlFor="activity-level">
               Activity Level:
             </label>
             <select
               value={activityLevel}
               onChange={(e) => setActivityLevel(e.target.value)}
               id="activity-level"
-              class="form-select"
+              className="form-select"
             >
               <option value={1.2}>Sedentary</option>
               <option value={1.375}>Light</option>

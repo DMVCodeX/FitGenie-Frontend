@@ -43,9 +43,9 @@ export function LogIn() {
           Password: <input className="form-control" name="password" type="password" />
           <p></p>
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="dropdownCheck2" />
-          <label class="form-check-label" for="dropdownCheck2">
+        <div className="form-check">
+          <input type="checkbox" className="form-check-input" id="dropdownCheck2" />
+          <label className="form-check-label" htmlFor="dropdownCheck2">
             Remember Me
           </label>
         </div>

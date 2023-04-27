@@ -1,4 +1,3 @@
-import { UsersIndex } from "./UsersIndex";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
@@ -7,6 +6,7 @@ import { ExercisesIndex } from "./ExercisesIndex";
 import { Routes, Route } from "react-router-dom";
 import { LogoutLink } from "./LogoutLink";
 import { UserWorkoutsIndex } from "./UserWorkoutsIndex";
+import { UsersIndex } from "./Usersindex";
 import { Maps } from "./Maps";
 import { Home } from "./Home";
 import { NutritionGuide } from "./NutritionGuide";
@@ -42,9 +42,6 @@ export function Content() {
 
   return (
     <div className="container-md">
-      <head>
-        <style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');</style>
-      </head>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/macrocalculator" element={<MacroCalculator />} />
