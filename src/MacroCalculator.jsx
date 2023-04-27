@@ -12,18 +12,11 @@ export function MacroCalculator() {
   function calculateMacros(event) {
     // calculate macros based on Harris-Benedict formula
     event.preventDefault();
-    console.log(activityLevel);
     const bmr = 10 * weight + 6.25 * parseInt(height.split("'")[0] * 12) + parseInt(height.split("'")[1]) - 5 * age;
-    console.log(age);
-    console.log(weight);
-    console.log(height);
     const tdee = bmr * activityLevel;
     const proteinValue = 0.8 * weight;
-    console.log(tdee);
     const fatsValue = (0.3 * tdee) / 9;
     const carbsValue = (tdee - proteinValue * 4 - fatsValue * 9) / 4;
-    console.log(fatsValue);
-    console.log(carbsValue);
 
     setProtein(proteinValue.toFixed(1));
     setCarbs(carbsValue.toFixed(1));
@@ -32,7 +25,7 @@ export function MacroCalculator() {
 
   return (
     <div>
-      <h1>Calculate Your Macros</h1>
+      <h1 className="m-3 pb-2">Calculate Your Macros</h1>
       <div className="card">
         <p></p>
         <form className="card-body">
