@@ -5,17 +5,17 @@ import { Routes, Route } from "react-router-dom";
 export function Header() {
   return (
     <header>
+      <nav>
+        <div class="container-fluid center-text ">
+          <a class="navbar-brand" href="/home">
+            <h1>FitGenie</h1>
+          </a>
+        </div>
+      </nav>
       <nav className="navbar navbar-expand-lg bg-body-tertiary ">
         <div className="container">
-          <ul className="nav justify-content-start">
-            <li>
-              {" "}
-              <div class="container-fluid ">
-                <a class="navbar-brand" href="/home">
-                  <h1>FitGenie</h1>
-                </a>
-              </div>
-            </li>
+          <ul className="nav justifycontent-center">
+            <li> </li>
             <li className="nav-item">
               <a className="navbar-brand" href="/map">
                 <img
@@ -68,6 +68,17 @@ export function Header() {
                   alt="Logo"
                   width="35"
                   height="35"
+                  className="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="navbar-brand" href="/shop">
+                <img
+                  src="https://img.icons8.com/?size=1x&id=3686&format=png"
+                  alt="Logo"
+                  width="33"
+                  height="33"
                   className="d-inline-block align-text-top"
                 />
               </a>
