@@ -5,10 +5,9 @@ import { Routes, Route } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      <nav class="navbar bg-body-tertiary"></nav>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3 ">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
         <div className="container">
-          <ul className="nav justify-content-end">
+          <ul className="nav justify-content-start">
             <li>
               {" "}
               <div class="container-fluid ">

@@ -44,7 +44,7 @@ export function Content() {
     <div className="container-md">
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<SignUp />} />
         <Route path="/macrocalculator" element={<MacroCalculator />} />
         <Route path="/map" element={<Maps />} />
         <Route path="/signup" element={<SignUp />} />
