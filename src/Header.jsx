@@ -5,16 +5,18 @@ import { Routes, Route } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/home">
-            <h2>FitGenie</h2>
-          </a>
-        </div>
-      </nav>
+      <nav class="navbar bg-body-tertiary"></nav>
       <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3 ">
         <div className="container">
           <ul className="nav justify-content-end">
+            <li>
+              {" "}
+              <div class="container-fluid ">
+                <a class="navbar-brand" href="/home">
+                  <h1>FitGenie</h1>
+                </a>
+              </div>
+            </li>
             <li className="nav-item">
               <a className="navbar-brand" href="/map">
                 <img
@@ -93,7 +95,7 @@ export function Header() {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item ml-6">
               <a className="navbar-brand" href="/login">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
@@ -104,7 +106,7 @@ export function Header() {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item ml-6 ">
               <LogoutLink />
             </li>
           </ul>
