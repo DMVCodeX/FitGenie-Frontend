@@ -2,7 +2,7 @@ import { LogoutLink } from "./LogoutLink";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
-export function Header() {
+export function Header(props) {
   return (
     <header>
       <nav>
@@ -83,7 +83,7 @@ export function Header() {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="navbar-brand" href="/users">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/694/694642.png"
@@ -93,7 +93,7 @@ export function Header() {
                   className="d-inline-block align-text-top"
                 />
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="navbar-brand" href="signup">
                 <img
@@ -134,7 +134,7 @@ export function Header() {
             aria-labelledby="offcanvasNavbarLabel"
           >
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <h5 class="offcanvas-title center-text" id="offcanvasNavbarLabel">
                 Dashboard
               </h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
