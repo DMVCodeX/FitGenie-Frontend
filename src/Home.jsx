@@ -4,13 +4,10 @@ export function Home() {
       <head>
         <style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');</style>
       </head>
-      <p></p>
-      <h1 className="center-text">Endurance | Determination | Consistency </h1>
-      <p></p>
 
-      <p></p>
+      <h2 className="center-text">Endurance | Determination | Consistency </h2>
 
-      <div id="carouselExampleCaptions" className="carousel slide m-5">
+      <div id="carouselExampleCaptions" className="carousel slide m-4">
         <div className="carousel-indicators">
           <button
             type="button"

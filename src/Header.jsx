@@ -5,30 +5,16 @@ import { Routes, Route } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/home">
+            <h2>FitGenie</h2>
+          </a>
+        </div>
+      </nav>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary mb-3 ">
+        <div className="container">
           <ul className="nav justify-content-end">
-            <h2 className="">FitGenie </h2>
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/5169/5169662.png"
-              alt="Logo"
-              width="35"
-              height="35"
-              className="d-inline-block align-text-top"
-            />
-
-            <li className="nav-item">
-              <a className="navbar-brand" href="/home">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/10181/10181480.png"
-                  alt="Logo"
-                  width="35"
-                  height="35"
-                  className="d-inline-block align-text-top"
-                />
-              </a>
-            </li>
-
             <li className="nav-item">
               <a className="navbar-brand" href="/map">
                 <img
