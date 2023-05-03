@@ -47,7 +47,6 @@ export function Home() {
           </div>
           <div className="carousel-item">
             <img
-              height="865"
               src="https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
               className="d-block w-100"
               alt="https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
