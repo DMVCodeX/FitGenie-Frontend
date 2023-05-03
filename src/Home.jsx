@@ -5,12 +5,12 @@ export function Home() {
         <style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');</style>
       </head>
       <p></p>
-      <h1 className="m-3 pb-3">Endurance | Determination | Consistency </h1>
+      <h1 className="center-text">Endurance | Determination | Consistency </h1>
       <p></p>
 
       <p></p>
 
-      <div id="carouselExampleCaptions" className="carousel slide">
+      <div id="carouselExampleCaptions" className="carousel slide m-5">
         <div className="carousel-indicators">
           <button
             type="button"
