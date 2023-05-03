@@ -13,8 +13,8 @@ export function LogoutLink() {
       <img
         src="https://cdn-icons-png.flaticon.com/512/182/182448.png"
         alt="Logo"
-        width="30"
-        height="30"
+        width="20"
+        height="20"
         className="d-inline-block align-text-top"
       />
     </a>
