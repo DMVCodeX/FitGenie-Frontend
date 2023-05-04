@@ -15,7 +15,7 @@ export function Header(props) {
         </div>
         <div className="itemright">
           <button
-            style={{ backgroundColor: "grey" }}
+            // style={{ backgroundColor: "grey" }}
             className="navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
@@ -23,7 +23,9 @@ export function Header(props) {
             aria-controls="offcanvasNavbar"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="">
+              <img src="https://img.icons8.com/?size=1x&id=vHLspPwGtpIq&format=png" alt="" width="50" height="50" />
+            </span>
           </button>
           <div
             className="offcanvas offcanvas-end"
