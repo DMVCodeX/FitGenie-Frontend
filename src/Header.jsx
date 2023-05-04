@@ -30,7 +30,7 @@ export function Header(props) {
               </a>
             </li>
 
-            {/* <li className="nav-item m-3">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="exercises">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2928/2928158.png"
@@ -40,7 +40,7 @@ export function Header(props) {
                   className="d-inline-block align-text-top"
                 />
               </a>
-            </li> */}
+            </li>
             {/* <li className="nav-item m-3">
               <a className="navbar-brand" href="/userworkouts">
                 <img
