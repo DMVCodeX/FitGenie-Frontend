@@ -13,7 +13,7 @@ export function Header(props) {
         </div>
       </nav>
       <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-        <div className="container">
+        <div className="container-fluid">
           <ul className="nav justifycontent-center">
             <li> </li>
             <li className="nav-item">
