@@ -46,7 +46,6 @@ export function Header(props) {
                     Home
                   </a>
                 </li>
-
                 <li className="nav-item m-3">
                   <a className="nav-link active" aria-current="page" href="#">
                     Account Settings
@@ -59,13 +58,11 @@ export function Header(props) {
                     />
                   </a>
                 </li>
-
                 <li className="nav-item m-3">
                   <a className="nav-link active" href="/aboutus">
                     About Us
                   </a>
                 </li>
-
                 {localStorage.jwt === undefined ? (
                   <></>
                 ) : (
@@ -73,7 +70,41 @@ export function Header(props) {
                     Logout <LogoutLink />
                   </li>
                 )}
+                {/* turnary function */}
+                {localStorage.jwt === undefined ? (
+                  //opening tag 1 (wraps the li elements to act as a parent element)
+                  <>
+                    <li className="nav-item m-3">
+                      <a className="navbar-brand" href="signup">
+                        {/* <img
+                        src="https://cdn-icons-png.flaticon.com/512/6238/6238952.png"
+                        alt="Logo"
+                        width="42"
+                        height="42"
+                        className="d-inline-block align-text-top"
+                      /> */}
+                        Sign Up
+                      </a>
+                    </li>
+                    <li className="nav-item m-3 ml-6">
+                      <a className="navbar-brand" href="/login">
+                        {/* <img
+                        src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
+                        alt="Logo"
+                        width="42"
+                        height="42"
+                        className="d-inline-block align-text-top"
+                      /> */}
+                        Log In
+                      </a>
+                    </li>
+                  </> //closing tag 1 (wraps the li elements to act as a parent element)
+                ) : (
+                  <></> //opening and closing tag this is an empty element
+                )}{" "}
+                {/* turnary function */}
               </ul>
+
               <form className="d-flex mt-3" role="search">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                 <button className="btn btn-outline-secondary" type="submit">
@@ -166,37 +197,6 @@ export function Header(props) {
                 />
               </a>
             </li> */}
-            {/* turnary function */}
-            {localStorage.jwt === undefined ? (
-              //opening tag 1 (wraps the li elements to act as a parent element)
-              <>
-                <li className="nav-item m-3">
-                  <a className="navbar-brand" href="signup">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/6238/6238952.png"
-                      alt="Logo"
-                      width="42"
-                      height="42"
-                      className="d-inline-block align-text-top"
-                    />
-                  </a>
-                </li>
-                <li className="nav-item m-3 ml-6">
-                  <a className="navbar-brand" href="/login">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
-                      alt="Logo"
-                      width="42"
-                      height="42"
-                      className="d-inline-block align-text-top"
-                    />
-                  </a>
-                </li>
-              </> //closing tag 1 (wraps the li elements to act as a parent element)
-            ) : (
-              <></> //opening and closing tag this is an empty element
-            )}{" "}
-            {/* turnary function */}
           </ul>
         </div>
       </nav>

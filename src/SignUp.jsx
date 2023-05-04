@@ -12,7 +12,7 @@ export function SignUp() {
       .post("/users.json", params)
       .then((response) => {
         event.target.reset();
-        window.location.href = "/home";
+        window.location.href = "/login";
       })
       .catch((error) => {
         setErrors(error.response.data.errors);
