@@ -47,49 +47,32 @@ export function Header(props) {
                   </a>
                 </li>
 
-                <li className="nav-item m-3 dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Current User
-                    {/* <img
-                        src="https://img.icons8.com/?size=512&id=15263&format=png"
-                        alt="Logo"
-                        width="25"
-                        height="25"
-                        className="d-inline-block align-text-top m-1"
-                      /> */}
+                <li className="nav-item m-3">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Account Settings
+                    <img
+                      src="https://img.icons8.com/?size=512&id=364&format=png"
+                      alt="Logo"
+                      width="25"
+                      height="25"
+                      className="d-inline-block align-text-top m-1"
+                    />
                   </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Account Settings
-                        <img
-                          src="https://img.icons8.com/?size=512&id=364&format=png"
-                          alt="Logo"
-                          width="25"
-                          height="25"
-                          className="d-inline-block align-text-top m-1"
-                        />
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/aboutus">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li className="dropdown-item ml-6 ">
-                      Logout <LogoutLink />
-                    </li>
-                  </ul>
                 </li>
+
+                <li className="nav-item m-3">
+                  <a className="nav-link active" href="/aboutus">
+                    About Us
+                  </a>
+                </li>
+
+                {localStorage.jwt === undefined ? (
+                  <></>
+                ) : (
+                  <li className="nav-item m-3">
+                    Logout <LogoutLink />
+                  </li>
+                )}
               </ul>
               <form className="d-flex mt-3" role="search">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
