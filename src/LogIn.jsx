@@ -28,6 +28,7 @@ export function LogIn() {
 
   return (
     <div className="card" id="login">
+      {/* Log in with test account */}
       <h1 className="card-body ">Log In</h1>
       <ul>
         {errors.map((error) => (
@@ -36,6 +37,7 @@ export function LogIn() {
       </ul>
       <form className="card-body" onSubmit={handleSubmit}>
         <div className="">
+          {/* Prefill test account info */}
           Email: <input className="form-control" name="email" type="email" />
           <p></p>
         </div>
