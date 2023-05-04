@@ -21,7 +21,7 @@ export function SignUp() {
 
   return (
     <div>
-      <h1 className="center-text">Welcome to FitGenie</h1>
+      <h1 className="center-text m-3">Welcome to FitGenie</h1>
       <div className="card m-5" id="signup">
         <h1 className="card-body">Signup</h1>
         <ul>

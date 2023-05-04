@@ -8,15 +8,17 @@ export function Header(props) {
       <nav>
         <div class="container-fluid center-text ">
           <a class="navbar-brand" href="/home">
-            <h1>FitGenie</h1>
+            <h1>
+              FitGenie <img src="https://img.icons8.com/?size=512&id=23938&format=png" alt="" height="45" width="45" />
+            </h1>
           </a>
         </div>
       </nav>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary container-fluid ">
+      <nav className="nav justify-content-center">
         <div className="container">
-          <ul className="nav justifycontent-center">
+          <ul className="nav justify-content-center">
             <li> </li>
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="/map">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/4053/4053871.png"
@@ -28,7 +30,7 @@ export function Header(props) {
               </a>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="exercises">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2928/2928158.png"
@@ -39,7 +41,7 @@ export function Header(props) {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="/userworkouts">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/7118/7118261.png"
@@ -50,7 +52,7 @@ export function Header(props) {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="/nutrition">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/4725/4725744.png"
@@ -61,7 +63,7 @@ export function Header(props) {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="/macrocalculator">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/3867/3867884.png"
@@ -72,7 +74,7 @@ export function Header(props) {
                 />
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="/shop">
                 <img
                   src="https://img.icons8.com/?size=1x&id=3686&format=png"
@@ -83,7 +85,7 @@ export function Header(props) {
                 />
               </a>
             </li>
-            {/* <li className="nav-item">
+            {/* <li className="nav-item m-3">
               <a className="navbar-brand" href="/users">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/694/694642.png"
@@ -94,7 +96,7 @@ export function Header(props) {
                 />
               </a>
             </li> */}
-            <li className="nav-item">
+            <li className="nav-item m-3">
               <a className="navbar-brand" href="signup">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/6238/6238952.png"
@@ -105,7 +107,7 @@ export function Header(props) {
                 />
               </a>
             </li>
-            <li className="nav-item ml-6">
+            <li className="nav-item m-3 ml-6">
               <a className="navbar-brand" href="/login">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/6238/6238893.png"
@@ -142,13 +144,13 @@ export function Header(props) {
               </div>
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
+                  <li class="nav-item m-3">
                     <a class="nav-link active" aria-current="page" href="/home">
                       Home
                     </a>
                   </li>
 
-                  <li class="nav-item dropdown">
+                  <li class="nav-item m-3 dropdown">
                     <a
                       class="nav-link dropdown-toggle"
                       href="#"
