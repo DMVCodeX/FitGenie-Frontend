@@ -19,12 +19,12 @@ export function Content() {
   const [currentUser, setCurrentUser] = useState({ workouts: [] });
   //UserIndex function
   const handleIndexUsers = () => {
-    axios.get("http://localhost:3000/users.json").then((response) => {
+    axios.get("/users.json").then((response) => {
       setUsers(response.data);
     });
   };
   const handleShowCurrentUser = () => {
-    axios.get("http://localhost:3000/users/current.json").then((response) => {
+    axios.get("/users/current.json").then((response) => {
       setCurrentUser(response.data);
     });
   };
@@ -34,7 +34,7 @@ export function Content() {
   const [exercises, setExercises] = useState([]);
 
   const handleIndexExercises = () => {
-    axios.get("http://localhost:3000/exercises.json").then((response) => {
+    axios.get("/exercises.json").then((response) => {
       setExercises(response.data);
     });
   };
