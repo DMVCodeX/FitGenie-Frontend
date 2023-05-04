@@ -52,3 +52,23 @@ html {
 .head {
   font-family: 'Exo 2', sans-serif;
 }
+
+.flexcontainer {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.itemcenter {
+  flex: 0 1 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.itemright {
+  flex: 0 1 auto;
+  margin-left: auto;
+  margin-right: 25px;
+  margin-top: 10px;
+}
