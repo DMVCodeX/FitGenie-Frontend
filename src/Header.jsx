@@ -179,7 +179,7 @@ export function Header(props) {
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/aboutus">
                           About Us
                         </a>
                       </li>
