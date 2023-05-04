@@ -2,4 +2,4 @@
 
 Live Web App
 
-https://dianescodediaries.netlify.app/home
+https://fitgenie.netlify.app/
