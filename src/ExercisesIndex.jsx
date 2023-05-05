@@ -16,9 +16,9 @@ export function ExercisesIndex(props) {
             <p>Suggested reps: {exercise.reps}</p>
             <ReactPlayer className="centered-image" url={exercise.video_url} />
             <p></p>
-            <button type="submit" className="btn btn-outline-secondary">
+            {/* <button type="submit" className="btn btn-outline-secondary">
               Add to Workout
-            </button>
+            </button> */}
             <p></p>
           </div>
         ))}

@@ -23,7 +23,19 @@ export function SignUp() {
     <div>
       {/* add test account for easy access */}
       <h1 className="center-text m-3">Welcome to FitGenie</h1>
-      <div className="card m-5" id="signup">
+      <p className="center-text">
+        (Sign up and explore the app or use the test account to log in)
+        <a href="/login">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/6239/6239002.png"
+            alt="Logo"
+            width="45"
+            height="45"
+            className="d-inline-block m-3 "
+          />
+        </a>
+      </p>
+      <div className="card m-2" id="signup">
         <h1 className="card-body">Signup</h1>
         <ul>
           {errors.map((error) => (
