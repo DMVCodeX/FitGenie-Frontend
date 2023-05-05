@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 export function ExercisesIndex(props) {
   return (
     <div>
-      <h1>Explore Exercises</h1>
+      <h1 className="">Explore Exercises</h1>
       <h5>
         {" "}
         Schedule a Workout Session

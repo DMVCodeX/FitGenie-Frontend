@@ -24,7 +24,8 @@ export function SignUp() {
       {/* add test account for easy access */}
       <h1 className="center-text m-3">Welcome to FitGenie</h1>
       <p className="center-text">
-        (Sign up and explore the app or use the test account to log in)
+        Sign up and explore the app or use the test account to log in{" "}
+        <img src="https://img.icons8.com/?size=512&id=2922&format=png" alt="login" height="20" width="20" />
         <a href="/login">
           <img
             src="https://cdn-icons-png.flaticon.com/128/6239/6239002.png"
