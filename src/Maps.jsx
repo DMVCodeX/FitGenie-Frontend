@@ -17,6 +17,7 @@ export function Maps() {
   return (
     <div className="">
       <h1>Find a Gym Near You</h1>
+      <p>Please note that in order to see the map you must allow the use of your current location</p>
 
       {userLocation && (
         <Map height={500} center={userLocation} zoom={10}>
