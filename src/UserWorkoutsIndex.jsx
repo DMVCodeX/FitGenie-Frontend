@@ -9,9 +9,9 @@ export function UserWorkoutsIndex(props) {
 
       <h5>
         {" "}
-        Schedule Workout Routine
+        Schedule a Workout Session
         <a
-          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=${props.user.name}'s+Workout+&details=${props.user.name}'s+Workout&dates=20230322T160000Z%2F20230324T050000Z`}
+          href={`https://www.google.com/calendar/render?action=TEMPLATE&text=FitGenie+Workout+&details=FitGenie+Workout&dates=20230322T160000Z%2F20230324T050000Z`}
           target="_blank"
         >
           <p></p>
