@@ -1,6 +1,6 @@
 export function Home() {
   return (
-    <div className="container-fluid">
+    <div id="home-index" className="container-fluid">
       <head>
         <style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');</style>
       </head>
@@ -33,6 +33,7 @@ export function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
+              id="home-img"
               src="https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z3ltfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               className="d-block w-100"
               alt="https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z3ltfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
@@ -47,6 +48,7 @@ export function Home() {
           </div>
           <div className="carousel-item">
             <img
+              id="home-img"
               src="https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
               className="d-block w-100"
               alt="https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
@@ -61,6 +63,7 @@ export function Home() {
           </div>
           <div className="carousel-item">
             <img
+              id="home-img"
               src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3ltfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               className="d-block w-100"
               alt="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3ltfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"

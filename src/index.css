@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+#home-img {
+  height: 1500px;
+}
+
 #root {
   font-family: 'Exo 2', sans-serif;
 }
