@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+const handleSubmit = (event) => {
+  console.log("handling submit");
+  event.preventDefault();
+  const params = new FormData(event.target);
+};
+
 export function MacroCalculator() {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
@@ -9,9 +15,9 @@ export function MacroCalculator() {
   const [carbs, setCarbs] = useState("");
   const [fats, setFats] = useState("");
 
-  function calculateMacros(event) {
+  function calculateMacros() {
     // calculate macros based on Harris-Benedict formula
-    event.preventDefault();
+    // event.preventDefault();
     const bmr = 10 * weight + 6.25 * parseInt(height.split("'")[0] * 12) + parseInt(height.split("'")[1]) - 5 * age;
     const tdee = bmr * activityLevel;
     const proteinValue = 0.8 * weight;
@@ -28,7 +34,7 @@ export function MacroCalculator() {
       <h1 className="m-3 pb-2">Calculate Your Macros</h1>
       <div className="card">
         <p></p>
-        <form className="card-body">
+        <form onSubmit={handleSubmit} className="card-body">
           <label className="form-label" htmlFor="weight">
             Weight:
           </label>
@@ -74,7 +80,7 @@ export function MacroCalculator() {
           </div>
 
           <p></p>
-          <button className="btn btn-outline-secondary mt-1" onClick={calculateMacros}>
+          <button type="submit" className="btn btn-outline-secondary mt-1" onClick={calculateMacros}>
             Calculate Macros
           </button>
           <p></p>
