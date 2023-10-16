@@ -11,8 +11,7 @@ import { Maps } from "./Maps";
 import { Home } from "./Home";
 import { NutritionGuide } from "./NutritionGuide";
 import { MacroCalculator } from "./MacroCalculator";
-import { Shop } from "./Shop";
-import { AboutUs } from "./AboutUs";
+import { Info } from "./Info";
 
 export function Content() {
   const [users, setUsers] = useState([]);
@@ -56,8 +55,7 @@ export function Content() {
         <Route path="/logout" element={<LogoutLink />} />
         <Route path="/userworkouts" element={<UserWorkoutsIndex user={currentUser} />} />
         <Route path="/exercises" element={<ExercisesIndex exercises={exercises} />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/info" element={<Info />} />
       </Routes>
     </div>
   );

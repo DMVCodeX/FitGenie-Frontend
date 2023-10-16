@@ -59,7 +59,7 @@ export function Header(props) {
                   </a>
                 </li>
                 <li className="nav-item m-3">
-                  <a className="nav-link active" href="/aboutus">
+                  <a className="nav-link active" href="/info">
                     About Us
                   </a>
                 </li>
@@ -176,12 +176,12 @@ export function Header(props) {
               </a>
             </li>
             <li className="nav-item m-3">
-              <a className="navbar-brand" href="/shop">
+              <a className="navbar-brand" href="/info">
                 <img
-                  src="https://img.icons8.com/?size=1x&id=3686&format=png"
+                  src="https://cdn-icons-png.flaticon.com/128/3766/3766220.png"
                   alt="Logo"
-                  width="33"
-                  height="33"
+                  width="38"
+                  height="38"
                   className="d-inline-block align-text-top"
                 />
               </a>
