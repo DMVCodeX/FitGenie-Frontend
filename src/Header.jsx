@@ -24,7 +24,7 @@ export function Header(props) {
             aria-label="Toggle navigation"
           >
             <span className="">
-              <img src="https://img.icons8.com/?size=1x&id=vHLspPwGtpIq&format=png" alt="" width="50" height="50" />
+              <img src="https://cdn-icons-png.flaticon.com/128/3177/3177243.png" alt="" width="50" height="50" />
             </span>
           </button>
           <div
