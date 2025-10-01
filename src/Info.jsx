@@ -1,74 +1,161 @@
 export function Info() {
   return (
-    <>
-      <div className="container-fluid">
-        <div className="center-text m-5">
-          <p>
-            Click the link in image below to navigate to the FitGenie sign up page{" "}
-            <img height="40" width="40" src="https://cdn-icons-png.flaticon.com/128/7663/7663989.png" alt="" />
-          </p>
-          <div>
-            <a className="a" href={"https://fitgenie.netlify.app/"} target="_blank" rel="noreferrer">
-              <h1 className="center-text pink-font m-1">
-                {" "}
-                FitGenie App{" "}
+    <div className="container my-5">
+      {/* Header */}
+      <div className="text-center mb-5">
+        <h1 className="display-4 pink-font fw-bold">
+          Nutrition Tools
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/7078/7078773.png"
+            alt="FitGenie Logo"
+            width="70"
+            height="70"
+            className="ms-2"
+          />
+        </h1>
+        <p className="lead">
+          FitGenie is a cutting-edge fitness application built with Ruby on Rails, following MVC architecture and
+          RESTful API principles. Designed to empower your nutrition journey with smart tools for your goals.
+        </p>
+        <a
+          href="https://fitgenie.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-gradient btn-lg mt-3 shadow"
+          style={{
+            background: "linear-gradient(90deg, #ff758c, #ff7eb3)",
+            color: "#fff",
+            border: "none",
+          }}
+        >
+          Visit FitGenie App
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/7663/7663989.png"
+            alt="Link Icon"
+            width="30"
+            height="30"
+            className="ms-2"
+          />
+        </a>
+      </div>
+
+      {/* Features Grid */}
+      <div className="row g-4">
+        {/* Macro Calculator Card */}
+        <div className="col-md-6">
+          <div className="card shadow-lg h-100 border-0 hover-preview right-preview" style={{ borderRadius: "15px" }}>
+            <div
+              className="card-body preview-container"
+              style={{ background: "linear-gradient(135deg, #89f7fe, #66a6ff)", borderRadius: "15px" }}
+            >
+              <h3 className="card-title text-white fw-bold">Macro Calculator</h3>
+              <p className="card-text text-white">
+                Your interactive tool to personalize your macros for weight loss, maintenance, or gain.
+              </p>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">Goal-based calorie ranges</li>
+                <li className="list-group-item">Protein based on goal weight</li>
+                <li className="list-group-item">Customizable macro percentages</li>
+                <li className="list-group-item">Auto-adjust sliders to keep totals at 100%</li>
+                <li className="list-group-item">Live updates in grams and %</li>
+              </ul>
+
+              {/* Hidden Preview */}
+              <div className="preview-content right">
                 <img
-                  className=""
-                  src="https://img.icons8.com/?size=512&id=23938&format=png"
-                  alt=""
-                  width="70"
-                  height="70"
+                  src="https://cdn-icons-png.flaticon.com/128/12578/12578993.png"
+                  alt="Macro Preview"
+                  className="img-fluid"
+                  style={{ maxHeight: "150px" }}
                 />
-              </h1>
-            </a>
-            <br />
-            <h5>
-              <ol>
-                FitGenie is a cutting-edge fitness application meticulously crafted using the Ruby on Rails framework,
-                which seamlessly adheres to the Model-View-Controller (MVC) architecture and embraces the principles of
-                RESTful API conventions. This dynamic web app redefines the fitness journey with a plethora of robust
-                features designed to empower users on their path to a healthier lifestyle. Key Functionalities:
-                <br />
-                <br />
-                <li>
-                  Workout Customization: FitGenie is your fitness architect. It offers a diverse library of workouts,
-                  allowing users to curate personalized workout plans tailored to their fitness goals.
-                </li>
-                <br />
-                <li>
-                  Comprehensive Workout Resources: For every workout, users have access to a treasure trove of
-                  resources, including high-resolution images, detailed step-by-step descriptions, and instructive
-                  videos, ensuring they perform exercises with precision and confidence.
-                </li>
-                <br />
-                <li>
-                  Google Calendar Integration: Staying committed to your fitness regimen is a breeze with FitGenie. The
-                  app seamlessly integrates with Google Calendar, enabling users to effortlessly schedule their workouts
-                  without leaving the platform.
-                </li>
-                <br />
-                <li>
-                  Macro Calculator: FitGenie goes beyond workouts. It features a built-in macro calculator that takes
-                  into account user details such as weight, height, age, and activity level to recommend personalized
-                  macronutrient intake (protein, carbs, and fats). This feature helps users optimize their nutrition for
-                  their fitness goals.
-                </li>
-                <br />
-                <li>
-                  Nutrition Guides: In addition to the macro calculator, FitGenie provides comprehensive nutrition
-                  guides to assist users in reaching their fitness goals. These guides offer valuable insights into
-                  making healthier dietary choices.
-                  <br />
-                  <br />
-                  FitGenie is not just an app; it is your virtual fitness companion, simplifying gym planning, elevating
-                  workout experiences, and empowering you to reach your fitness milestones. Your journey to a healthier,
-                  more active lifestyle begins here.
-                </li>
-              </ol>
-            </h5>
+                <p className="mt-2 text-white">Drag sliders to instantly adjust macro breakdown!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Nutrition Guides Card */}
+        <div className="col-md-6">
+          <div className="card shadow-lg h-100 border-0 hover-preview left-preview" style={{ borderRadius: "15px" }}>
+            <div
+              className="card-body preview-container"
+              style={{ background: "linear-gradient(135deg, #fdfbfb, #ebedee)", borderRadius: "15px" }}
+            >
+              <h3 className="card-title fw-bold">Nutrition Guides</h3>
+              <p className="card-text">Comprehensive guides to make healthy eating simple and effective.</p>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">Meal planning tailored to your goals</li>
+                <li className="list-group-item">Portion control guidance</li>
+                <li className="list-group-item">Healthy eating strategies</li>
+                <li className="list-group-item">Quick access to nutrition resources</li>
+              </ul>
+
+              {/* Hidden Preview */}
+              <div className="preview-content left">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/9757/9757053.png"
+                  alt="Nutrition Preview"
+                  className="img-fluid"
+                  style={{ maxHeight: "150px" }}
+                />
+                <p className="mt-2">Explore expert nutrition tips instantly!</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </>
+
+      {/* Footer */}
+      <div className="mt-5 text-center">
+        <p className="text-muted">
+          FitGenie — your personalized nutrition companion, making macro tracking and healthy eating simple and
+          effective.
+        </p>
+      </div>
+
+      {/* Hover Preview CSS */}
+      <style>{`
+        .hover-preview {
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s ease-in-out;
+        }
+        .hover-preview:hover {
+          transform: scale(1.02);
+        }
+        .preview-content {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          padding: 15px;
+          background: rgba(0,0,0,0.7);
+          color: white;
+          text-align: center;
+          transition: transform 0.4s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .preview-content.right {
+          right: -100%;
+        }
+        .hover-preview.right-preview:hover .preview-content.right {
+          transform: translateX(-100%);
+        }
+        .preview-content.left {
+          left: -100%;
+        }
+        .hover-preview.left-preview:hover .preview-content.left {
+          transform: translateX(100%);
+        }
+        .list-group-item {
+          background: transparent;
+          border: none;
+          color: #333;
+        }
+      `}</style>
+    </div>
   );
 }

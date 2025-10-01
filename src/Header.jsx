@@ -156,7 +156,7 @@ export function Header(props) {
             <li className="nav-item m-3">
               <a className="navbar-brand" href="/nutrition">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/4725/4725744.png"
+                  src="https://cdn-icons-png.flaticon.com/128/12641/12641402.png"
                   alt="Logo"
                   width="35"
                   height="35"
@@ -167,7 +167,7 @@ export function Header(props) {
             <li className="nav-item m-3">
               <a className="navbar-brand" href="/macrocalculator">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/3867/3867884.png"
+                  src="https://cdn-icons-png.flaticon.com/128/12578/12578968.png"
                   alt="Logo"
                   width="35"
                   height="35"
@@ -178,7 +178,7 @@ export function Header(props) {
             <li className="nav-item m-3">
               <a className="navbar-brand" href="/info">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/128/3766/3766220.png"
+                  src="https://cdn-icons-png.flaticon.com/128/11208/11208657.png"
                   alt="Logo"
                   width="38"
                   height="38"
