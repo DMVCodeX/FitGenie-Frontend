@@ -1,25 +1,29 @@
 import { useState } from "react";
 
 export function MacroCalculator() {
-  const [weight, setWeight] = useState(""); // lbs
-  const [height, setHeight] = useState(""); // e.g. 5'10
+  const [weight, setWeight] = useState("");
+  const [goalWeight, setGoalWeight] = useState("");
+  const [height, setHeight] = useState("");
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("male");
   const [activityLevel, setActivityLevel] = useState(1.2);
+  const [goal, setGoal] = useState("maintenance");
 
+  const [calorieRange, setCalorieRange] = useState("");
   const [protein, setProtein] = useState("");
   const [carbs, setCarbs] = useState("");
   const [fats, setFats] = useState("");
+  const [macroPercents, setMacroPercents] = useState({});
 
   function calculateMacros(e) {
     e.preventDefault();
 
-    // Convert inputs
     const weightKg = parseFloat(weight) * 0.4536;
+    const goalWeightKg = parseFloat(goalWeight) * 0.4536;
     const [feet, inches] = height.split("'");
     const heightCm = parseInt(feet) * 30.48 + parseInt(inches || 0) * 2.54;
 
-    // BMR (Harris-Benedict)
+    // BMR baseline
     let bmr = 0;
     if (sex === "male") {
       bmr = 88.362 + 13.397 * weightKg + 4.799 * heightCm - 5.677 * parseInt(age);
@@ -27,17 +31,57 @@ export function MacroCalculator() {
       bmr = 447.593 + 9.247 * weightKg + 3.098 * heightCm - 4.33 * parseInt(age);
     }
 
-    // TDEE
     const tdee = bmr * parseFloat(activityLevel);
 
-    // Macros
-    const proteinValue = weightKg * 2.0; // ~2 g per kg
-    const fatsValue = (0.25 * tdee) / 9; // 25% of calories
-    const carbsValue = (tdee - proteinValue * 4 - fatsValue * 9) / 4;
+    // Calorie range by goal
+    let minCalories, maxCalories;
+    if (goal === "loss") {
+      minCalories = tdee * 0.75;
+      maxCalories = tdee * 0.85;
+    } else if (goal === "gain") {
+      minCalories = tdee * 1.1;
+      maxCalories = tdee * 1.2;
+    } else {
+      minCalories = tdee * 0.95;
+      maxCalories = tdee * 1.05;
+    }
 
-    setProtein(proteinValue.toFixed(1));
-    setCarbs(carbsValue.toFixed(1));
-    setFats(fatsValue.toFixed(1));
+    const avgCalories = (minCalories + maxCalories) / 2;
+
+    // Macro percentages
+    let macroSplit;
+    if (goal === "loss") {
+      macroSplit = { protein: 0.3, fats: 0.25, carbs: 0.45 };
+    } else if (goal === "gain") {
+      macroSplit = { protein: 0.25, fats: 0.2, carbs: 0.55 };
+    } else {
+      macroSplit = { protein: 0.25, fats: 0.25, carbs: 0.5 };
+    }
+
+    // Protein based on goal weight
+    const proteinGrams = parseFloat(goalWeight) * 1.0; // 1g per lb
+    const proteinCalories = proteinGrams * 4;
+
+    // Fats
+    const fatCalories = avgCalories * macroSplit.fats;
+    const fatGrams = fatCalories / 9;
+
+    // Carbs
+    const carbCalories = avgCalories - proteinCalories - fatCalories;
+    const carbGrams = carbCalories / 4;
+
+    const totalCalories = proteinCalories + fatCalories + carbCalories;
+    const percents = {
+      protein: ((proteinCalories / totalCalories) * 100).toFixed(0),
+      fats: ((fatCalories / totalCalories) * 100).toFixed(0),
+      carbs: ((carbCalories / totalCalories) * 100).toFixed(0),
+    };
+
+    setCalorieRange(`${minCalories.toFixed(0)}–${maxCalories.toFixed(0)}`);
+    setProtein(proteinGrams.toFixed(0));
+    setFats(fatGrams.toFixed(0));
+    setCarbs(carbGrams.toFixed(0));
+    setMacroPercents(percents);
   }
 
   return (
@@ -45,8 +89,11 @@ export function MacroCalculator() {
       <h1 className="m-3 pb-2">Calculate Your Macros</h1>
       <div className="card">
         <form onSubmit={calculateMacros} className="card-body">
-          <label className="form-label">Weight (lbs):</label>
+          <label className="form-label">Current Weight (lbs):</label>
           <input className="form-control" value={weight} onChange={(e) => setWeight(e.target.value)} />
+
+          <label className="form-label mt-2">Goal Weight (lbs):</label>
+          <input className="form-control" value={goalWeight} onChange={(e) => setGoalWeight(e.target.value)} />
 
           <label className="form-label mt-2">Height (e.g. 5'10):</label>
           <input className="form-control" value={height} onChange={(e) => setHeight(e.target.value)} />
@@ -73,16 +120,33 @@ export function MacroCalculator() {
             <option value={1.9}>Very Active</option>
           </select>
 
+          <label className="form-label mt-2">Goal:</label>
+          <select value={goal} onChange={(e) => setGoal(e.target.value)} className="form-select">
+            <option value="loss">Weight Loss</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="gain">Weight Gain</option>
+          </select>
+
           <button type="submit" className="btn btn-outline-secondary mt-3">
             Calculate Macros
           </button>
         </form>
 
-        <div className="mt-2 p-3">
-          <p>Protein: {protein} g</p>
-          <p>Carbs: {carbs} g</p>
-          <p>Fats: {fats} g</p>
-        </div>
+        {calorieRange && (
+          <div className=" p-3">
+            <h4>Recommended Daily Intake: {calorieRange} kcal</h4>
+            <p>
+              <br />
+              Protein: {protein} g ({macroPercents.protein}%)
+            </p>
+            <p>
+              Carbs: {carbs} g ({macroPercents.carbs}%)
+            </p>
+            <p>
+              Fats: {fats} g ({macroPercents.fats}%)
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
