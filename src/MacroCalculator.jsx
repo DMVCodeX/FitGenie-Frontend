@@ -23,7 +23,6 @@ export function MacroCalculator() {
     const [feet, inches] = height.split("'");
     const heightCm = parseInt(feet) * 30.48 + parseInt(inches || 0) * 2.54;
 
-    // BMR baseline
     let bmr = 0;
     if (sex === "male") {
       bmr = 88.362 + 13.397 * weightKg + 4.799 * heightCm - 5.677 * parseInt(age);
@@ -33,7 +32,6 @@ export function MacroCalculator() {
 
     const tdee = bmr * parseFloat(activityLevel);
 
-    // Calorie range by goal
     let minCalories, maxCalories;
     if (goal === "loss") {
       minCalories = tdee * 0.75;
@@ -48,7 +46,6 @@ export function MacroCalculator() {
 
     const avgCalories = (minCalories + maxCalories) / 2;
 
-    // Macro percentages
     let macroSplit;
     if (goal === "loss") {
       macroSplit = { protein: 0.3, fats: 0.25, carbs: 0.45 };
@@ -58,15 +55,12 @@ export function MacroCalculator() {
       macroSplit = { protein: 0.25, fats: 0.25, carbs: 0.5 };
     }
 
-    // Protein based on goal weight
-    const proteinGrams = parseFloat(goalWeight) * 1.0; // 1g per lb
+    const proteinGrams = parseFloat(goalWeight) * 1.0;
     const proteinCalories = proteinGrams * 4;
 
-    // Fats
     const fatCalories = avgCalories * macroSplit.fats;
     const fatGrams = fatCalories / 9;
 
-    // Carbs
     const carbCalories = avgCalories - proteinCalories - fatCalories;
     const carbGrams = carbCalories / 4;
 
@@ -120,7 +114,7 @@ export function MacroCalculator() {
             <option value={1.9}>Very Active</option>
           </select>
 
-          <label className="form-label mt-2">Goal:</label>
+          <label className="form-label mt-2">Weight Goal:</label>
           <select value={goal} onChange={(e) => setGoal(e.target.value)} className="form-select">
             <option value="loss">Weight Loss</option>
             <option value="maintenance">Maintenance</option>
@@ -133,18 +127,55 @@ export function MacroCalculator() {
         </form>
 
         {calorieRange && (
-          <div className=" p-3">
-            <h4>Recommended Daily Intake: {calorieRange} kcal</h4>
+          <div className="p-3">
+            <h4>Recommended Daily Calorie Intake: {calorieRange} kcal</h4>
             <p>
-              <br />
               Protein: {protein} g ({macroPercents.protein}%)
             </p>
+            <div className="progress mb-2">
+              <div
+                className="progress-bar bg-success"
+                role="progressbar"
+                style={{ width: `${macroPercents.protein}%` }}
+                aria-valuenow={macroPercents.protein}
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {macroPercents.protein}%
+              </div>
+            </div>
+
             <p>
               Carbs: {carbs} g ({macroPercents.carbs}%)
             </p>
+            <div className="progress mb-2">
+              <div
+                className="progress-bar bg-info"
+                role="progressbar"
+                style={{ width: `${macroPercents.carbs}%` }}
+                aria-valuenow={macroPercents.carbs}
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {macroPercents.carbs}%
+              </div>
+            </div>
+
             <p>
               Fats: {fats} g ({macroPercents.fats}%)
             </p>
+            <div className="progress mb-2">
+              <div
+                className="progress-bar bg-warning"
+                role="progressbar"
+                style={{ width: `${macroPercents.fats}%` }}
+                aria-valuenow={macroPercents.fats}
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {macroPercents.fats}%
+              </div>
+            </div>
           </div>
         )}
       </div>
