@@ -120,7 +120,7 @@ export function Header(props) {
         <div className="container">
           <ul className="nav justify-content-center">
             <li> </li>
-            <li className="nav-item m-3">
+            {/* <li className="nav-item m-3">
               <a className="navbar-brand" href="/map">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/4053/4053871.png"
@@ -130,8 +130,8 @@ export function Header(props) {
                   className="d-inline-block align-text-top"
                 />
               </a>
-            </li>
-            <li className="nav-item m-3">
+            </li> */}
+            {/* <li className="nav-item m-3">
               <a className="navbar-brand" href="exercises">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2928/2928158.png"
@@ -141,7 +141,7 @@ export function Header(props) {
                   className="d-inline-block align-text-top"
                 />
               </a>
-            </li>
+            </li> */}
             {/* <li className="nav-item m-3">
               <a className="navbar-brand" href="/userworkouts">
                 <img
