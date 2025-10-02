@@ -386,7 +386,7 @@ export function MacroCalculator() {
           </div>
           <div className="text-center mt-5">
             <a
-              href="/macrocalculator"
+              href="/nutrition"
               className="btn btn-gradient btn-lg mt-3 shadow"
               style={{
                 background: "linear-gradient(90deg,rgb(79, 163, 231),rgb(255, 255, 255))",
