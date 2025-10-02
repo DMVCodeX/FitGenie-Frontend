@@ -384,6 +384,26 @@ export function MacroCalculator() {
               </div>
             </div>
           </div>
+          <div className="text-center mt-5">
+            <a
+              href="/macrocalculator"
+              className="btn btn-gradient btn-lg mt-3 shadow"
+              style={{
+                background: "linear-gradient(90deg,rgb(79, 163, 231),rgb(255, 255, 255))",
+                color: "#fff",
+                border: "none",
+              }}
+            >
+              Check Out Our Nutrition Guides
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/12641/12641402.png"
+                alt="Nutrition Guides"
+                width="30"
+                height="30"
+                className="ms-2"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>

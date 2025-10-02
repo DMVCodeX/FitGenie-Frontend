@@ -27,11 +27,11 @@ export function NutritionGuide() {
         .guide-accordion .accordion-button {
           transition: all 0.3s ease;
           font-size: 1.25rem;
-          background: linear-gradient(90deg,rgb(201, 64, 185),rgb(233, 165, 224));
+          background: linear-gradient(90deg,rgb(200, 96, 188),rgb(241, 235, 240));
           color: white;
         }
         .guide-accordion .accordion-button:hover {
-          background: linear-gradient(90deg,rgb(82, 148, 217),rgb(146, 183, 214)) !important;
+          background: linear-gradient(90deg,rgb(82, 148, 217),rgb(209, 220, 229)) !important;
         }
         .guide-card {
           border-radius: 12px;
@@ -207,14 +207,14 @@ export function NutritionGuide() {
           href="/macrocalculator"
           className="btn btn-gradient btn-lg mt-3 shadow"
           style={{
-            background: "linear-gradient(90deg,rgb(79, 163, 231),rgb(236, 158, 206))",
+            background: "linear-gradient(90deg,rgb(79, 163, 231),rgb(255, 255, 255))",
             color: "#fff",
             border: "none",
           }}
         >
           Check Out Our Macro Calculator
           <img
-            src="https://cdn-icons-png.flaticon.com/128/3870/3870545.png"
+            src="https://cdn-icons-png.flaticon.com/128/12578/12578968.png"
             alt="Macro Calculator"
             width="30"
             height="30"
