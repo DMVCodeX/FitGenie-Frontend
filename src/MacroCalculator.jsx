@@ -152,7 +152,7 @@ export function MacroCalculator() {
   }
   input[type="range"]::-webkit-slider-thumb {
     background: #fff;
-    border: 2px solid #E26BBA;
+    border: 2px solid #FF99AA;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -182,15 +182,22 @@ export function MacroCalculator() {
     transition: width 0.5s ease-in-out;
     white-space: normal;
     text-align: center;
-    padding: 2px;
+    padding: 4px;
+    min-height: 40px;
+    line-height: 1.2;
+    word-break: break-word;
   }
 
   /* MOBILE FIX */
   @media (max-width: 768px) {
+    .progress {
+      height: auto;
+    }
     .progress-bar {
       font-size: 14px;
+      padding: 6px;
+      min-height: auto;
       white-space: normal;
-      padding: 4px;
     }
   }
 `}</style>
