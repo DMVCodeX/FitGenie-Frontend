@@ -8,7 +8,7 @@ export function MacroCalculator() {
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("male");
   const [activityLevel, setActivityLevel] = useState("1.2");
-  const [goal, setGoal] = useState("maintenance");
+  const [goal, setGoal] = useState("notSure");
 
   const [customMacro, setCustomMacro] = useState(false);
   const [sliders, setSliders] = useState({ protein: 30, carbs: 40, fats: 30 });
@@ -63,41 +63,47 @@ export function MacroCalculator() {
     };
 
     setSliders(updated);
+    calculateMacros(updated);
   };
 
-  const calculateMacros = () => {
-    if (!weight || !goalWeight || !height || !age) return;
+  const calculateMacros = (customSliders = sliders) => {
+    if (!weight || !height || !age) return;
 
     const bmr =
       sex === "male" ? 66 + 6.23 * weight + 12.7 * height - 6.8 * age : 655 + 4.35 * weight + 4.7 * height - 4.7 * age;
 
     const tdee = bmr * parseFloat(activityLevel);
 
-    let minCalories, maxCalories;
-    if (goal === "loss") {
-      minCalories = tdee * 0.75;
-      maxCalories = tdee * 0.85;
-    } else if (goal === "gain") {
-      minCalories = tdee * 1.1;
-      maxCalories = tdee * 1.2;
-    } else {
-      minCalories = tdee * 0.95;
-      maxCalories = tdee * 1.05;
+    let calorieAdjustment = 0.85; // default: slight deficit for most cases
+    let macroSplit = { protein: 0.3, carbs: 0.4, fats: 0.3 };
+
+    if (goal === "tone") {
+      calorieAdjustment = 0.8; // 20% deficit for toning/fat loss
+      macroSplit = { protein: 0.35, carbs: 0.35, fats: 0.3 };
+    } else if (goal === "build") {
+      calorieAdjustment = 1.0; // maintenance to slight surplus
+      macroSplit = { protein: 0.35, carbs: 0.45, fats: 0.2 };
+    } else if (goal === "strength") {
+      calorieAdjustment = 0.9; // slight deficit for lean strength gain
+      macroSplit = { protein: 0.3, carbs: 0.5, fats: 0.2 };
+    } else if (goal === "notSure") {
+      calorieAdjustment = 0.85; // safe default deficit
+      macroSplit = { protein: 0.3, carbs: 0.4, fats: 0.3 };
     }
-    const avgCalories = (minCalories + maxCalories) / 2;
+
+    const avgCalories = tdee * calorieAdjustment;
+    const minCalories = avgCalories * 0.95;
+    const maxCalories = avgCalories * 1.05;
+
     setCalorieRange(`${Math.round(minCalories)} - ${Math.round(maxCalories)}`);
 
-    let macroSplit = customMacro
-      ? {
-          protein: sliders.protein / 100,
-          carbs: sliders.carbs / 100,
-          fats: sliders.fats / 100,
-        }
-      : goal === "loss"
-      ? { protein: 0.3, carbs: 0.45, fats: 0.25 }
-      : goal === "gain"
-      ? { protein: 0.25, carbs: 0.55, fats: 0.2 }
-      : { protein: 0.25, carbs: 0.5, fats: 0.25 };
+    if (customMacro) {
+      macroSplit = {
+        protein: customSliders.protein / 100,
+        carbs: customSliders.carbs / 100,
+        fats: customSliders.fats / 100,
+      };
+    }
 
     const proteinCalories = avgCalories * macroSplit.protein;
     const carbCalories = avgCalories * macroSplit.carbs;
@@ -114,9 +120,27 @@ export function MacroCalculator() {
     });
   };
 
+  const resetForm = () => {
+    setWeight("");
+    setGoalWeight("");
+    setHeightInput("");
+    setHeight(0);
+    setAge("");
+    setSex("male");
+    setActivityLevel("1.2");
+    setGoal("notSure");
+    setCustomMacro(false);
+    setSliders({ protein: 30, carbs: 40, fats: 30 });
+    setProteinGrams(0);
+    setCarbGrams(0);
+    setFatGrams(0);
+    setMacroPercents({ protein: 0, carbs: 0, fats: 0 });
+    setCalorieRange("");
+  };
+
   useEffect(() => {
     calculateMacros();
-  }, [sliders, weight, goalWeight, height, age, sex, activityLevel, goal, customMacro]);
+  }, [weight, height, age, sex, activityLevel, goal, sliders, customMacro]);
 
   return (
     <>
@@ -128,23 +152,21 @@ export function MacroCalculator() {
         }
         input[type="range"]::-webkit-slider-thumb {
           background: #fff;
-          border: 2px solid #4caf50;
+          border: 2px solid #FF99AA;
           width: 20px;
           height: 20px;
           border-radius: 50%;
           cursor: pointer;
         }
         .progress-bar.bg-success {
-          background: linear-gradient(90deg, rgb(225, 105, 199), rgb(224, 188, 231));
+          background: linear-gradient(90deg, rgb(226, 107, 186),rgb(236, 158, 206));
         }
         .progress-bar.bg-info {
-          background: linear-gradient(90deg, rgb(62, 145, 186), rgb(166, 197, 222));
+          background: linear-gradient(90deg, rgb(116, 206, 239),rgb(194, 226, 235));
         }
         .progress-bar.bg-warning {
           background: linear-gradient(90deg, rgb(127, 184, 83), rgb(180, 217, 99));
         }
-
-        /* Larger macro bars */
         .progress {
           height: 40px;
           border-radius: 12px;
@@ -162,7 +184,7 @@ export function MacroCalculator() {
       `}</style>
 
       <div className="container py-5 d-flex justify-content-center">
-        <div className="card shadow-lg p-4 rounded-4 macro-card" style={{ maxWidth: "900px", width: "100%" }}>
+        <div className="card shadow-lg p-4 rounded-4" style={{ maxWidth: "900px", width: "100%" }}>
           <h1 className="fw-bold text-center mb-4">Macro Calculator</h1>
 
           {/* Inputs */}
@@ -209,8 +231,11 @@ export function MacroCalculator() {
           <div className="mt-3">
             <label className="form-label">Sex</label>
             <select className="form-select form-select-lg" value={sex} onChange={(e) => setSex(e.target.value)}>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              {["male", "female"].map((s) => (
+                <option key={s} value={s}>
+                  {s.charAt(0).toUpperCase() + s.slice(1)}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -230,18 +255,45 @@ export function MacroCalculator() {
             </select>
           </div>
 
-          {/* Weight Goal */}
+          {/* Fitness Goal */}
           <div className="mt-3">
-            <label className="form-label">Weight Goal</label>
+            <label className="form-label">Fitness Goal</label>
             <select className="form-select form-select-lg" value={goal} onChange={(e) => setGoal(e.target.value)}>
-              <option value="loss">Weight Loss</option>
-              <option value="maintenance">Maintenance</option>
-              <option value="gain">Weight Gain</option>
+              <option value="tone">Tone</option>
+              <option value="build">Build Muscle</option>
+              <option value="strength">Strength</option>
+              <option value="notSure">Not Sure</option>
             </select>
           </div>
 
-          {/* Custom Macro */}
-          {/* <div className="form-check mt-3">
+          {/* Buttons */}
+          <div className="mt-3 d-flex gap-2">
+            <button
+              className="btn btn-gradient btn-lg mt-3 shadow"
+              style={{
+                background: "linear-gradient(90deg,rgb(226, 107, 186),rgb(236, 158, 206))",
+                color: "#fff",
+                border: "none",
+              }}
+              onClick={() => calculateMacros()}
+            >
+              Calculate Macros
+            </button>
+            <button
+              className="btn btn-gradient btn-lg mt-3 shadow"
+              style={{
+                background: "linear-gradient(90deg,rgb(116, 206, 239),rgb(194, 226, 235))",
+                color: "#fff",
+                border: "none",
+              }}
+              onClick={resetForm}
+            >
+              Reset
+            </button>
+          </div>
+
+          {/* Custom Macro Toggle */}
+          <div className="form-check mt-3">
             <input
               type="checkbox"
               className="form-check-input"
@@ -249,13 +301,14 @@ export function MacroCalculator() {
               onChange={(e) => setCustomMacro(e.target.checked)}
             />
             <label className="form-check-label">Use Custom Macro Percentages</label>
-          </div> */}
-          <br />
-          <h5 className="form-check-label">Use Custom Macro Percentages</h5>
-          <hr />
+          </div>
+
+          {/* Custom Macro Sliders */}
           {customMacro && (
             <div className="mt-4">
-              <label>Protein %: {sliders.protein.toFixed(0)}%</label>
+              <label>
+                Protein %: {sliders.protein.toFixed(0)}% ({proteinGrams}g)
+              </label>
               <input
                 type="range"
                 min="0"
@@ -265,7 +318,9 @@ export function MacroCalculator() {
                 className="form-range"
               />
 
-              <label>Carbs %: {sliders.carbs.toFixed(0)}%</label>
+              <label>
+                Carbs %: {sliders.carbs.toFixed(0)}% ({carbGrams}g)
+              </label>
               <input
                 type="range"
                 min="0"
@@ -275,7 +330,9 @@ export function MacroCalculator() {
                 className="form-range"
               />
 
-              <label>Fats %: {sliders.fats.toFixed(0)}%</label>
+              <label>
+                Fats %: {sliders.fats.toFixed(0)}% ({fatGrams}g)
+              </label>
               <input
                 type="range"
                 min="0"
