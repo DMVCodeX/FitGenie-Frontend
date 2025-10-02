@@ -145,43 +145,55 @@ export function MacroCalculator() {
   return (
     <>
       <style>{`
-        input[type="range"].form-range {
-          height: 8px;
-          border-radius: 5px;
-          background: linear-gradient(90deg, #4caf50, #2196f3, #ff9800);
-        }
-        input[type="range"]::-webkit-slider-thumb {
-          background: #fff;
-          border: 2px solid #FF99AA;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          cursor: pointer;
-        }
-        .progress-bar.bg-success {
-          background: linear-gradient(90deg, rgb(226, 107, 186),rgb(236, 158, 206));
-        }
-        .progress-bar.bg-info {
-          background: linear-gradient(90deg, rgb(116, 206, 239),rgb(194, 226, 235));
-        }
-        .progress-bar.bg-warning {
-          background: linear-gradient(90deg, rgb(127, 184, 83), rgb(180, 217, 99));
-        }
-        .progress {
-          height: 40px;
-          border-radius: 12px;
-          overflow: hidden;
-          background-color: #f1f3f4;
-        }
-        .progress-bar {
-          font-weight: 600;
-          font-size: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: width 0.5s ease-in-out;
-        }
-      `}</style>
+  input[type="range"].form-range {
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #4caf50, #2196f3, #ff9800);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    background: #fff;
+    border: 2px solid #E26BBA;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .progress-bar.bg-success {
+    background: linear-gradient(90deg, rgb(226, 107, 186),rgb(236, 158, 206));
+  }
+  .progress-bar.bg-info {
+    background: linear-gradient(90deg, rgb(116, 206, 239),rgb(194, 226, 235));
+  }
+  .progress-bar.bg-warning {
+    background: linear-gradient(90deg, rgb(127, 184, 83), rgb(180, 217, 99));
+  }
+  .progress {
+    height: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f1f3f4;
+  }
+  .progress-bar {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease-in-out;
+    white-space: normal;
+    text-align: center;
+    padding: 2px;
+  }
+
+  /* MOBILE FIX */
+  @media (max-width: 768px) {
+    .progress-bar {
+      font-size: 14px;
+      white-space: normal;
+      padding: 4px;
+    }
+  }
+`}</style>
 
       <div className="container py-5 d-flex justify-content-center">
         <div className="card shadow-lg p-4 rounded-4" style={{ maxWidth: "900px", width: "100%" }}>
