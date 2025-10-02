@@ -3,22 +3,47 @@ import { useState, useEffect } from "react";
 export function MacroCalculator() {
   const [weight, setWeight] = useState("");
   const [goalWeight, setGoalWeight] = useState("");
-  const [height, setHeight] = useState("");
+  const [heightInput, setHeightInput] = useState("");
+  const [height, setHeight] = useState(0);
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("male");
-  const [activityLevel, setActivityLevel] = useState(1.2);
+  const [activityLevel, setActivityLevel] = useState("1.2");
   const [goal, setGoal] = useState("maintenance");
 
-  const [calorieRange, setCalorieRange] = useState("");
-  const [protein, setProtein] = useState("");
-  const [carbs, setCarbs] = useState("");
-  const [fats, setFats] = useState("");
-  const [macroPercents, setMacroPercents] = useState({ protein: 25, fats: 25, carbs: 50 });
-
   const [customMacro, setCustomMacro] = useState(false);
-  const [sliders, setSliders] = useState({ protein: 25, fats: 25, carbs: 50 });
+  const [sliders, setSliders] = useState({ protein: 30, carbs: 40, fats: 30 });
 
-  // Keep sliders adding up to 100%
+  const [proteinGrams, setProteinGrams] = useState(0);
+  const [carbGrams, setCarbGrams] = useState(0);
+  const [fatGrams, setFatGrams] = useState(0);
+  const [macroPercents, setMacroPercents] = useState({ protein: 0, carbs: 0, fats: 0 });
+  const [calorieRange, setCalorieRange] = useState("");
+
+  const activityMultipliers = {
+    1.2: "Sedentary",
+    1.375: "Lightly active",
+    1.55: "Moderately active",
+    1.725: "Very active",
+    1.9: "Extra active",
+  };
+
+  const parseHeight = (value) => {
+    const match = value.match(/(\d+)'(\d+)/);
+    if (match) {
+      const feet = parseInt(match[1], 10);
+      const inches = parseInt(match[2], 10);
+      return feet * 12 + inches;
+    }
+    const num = parseFloat(value);
+    return isNaN(num) ? 0 : num;
+  };
+
+  const handleHeightChange = (e) => {
+    const val = e.target.value;
+    setHeightInput(val);
+    setHeight(parseHeight(val));
+  };
+
   const handleSliderChange = (macro, value) => {
     const newValue = parseInt(value);
     let otherMacros = Object.keys(sliders).filter((m) => m !== macro);
@@ -26,34 +51,25 @@ export function MacroCalculator() {
     let diff = newValue - sliders[macro];
 
     let updated = { ...sliders, [macro]: newValue };
-
     otherMacros.forEach((m) => {
       updated[m] = Math.max(0, sliders[m] - diff * (sliders[m] / totalOther));
     });
 
-    // Normalize to exactly 100%
-    let total = updated.protein + updated.fats + updated.carbs;
+    let total = updated.protein + updated.carbs + updated.fats;
     updated = {
       protein: (updated.protein / total) * 100,
-      fats: (updated.fats / total) * 100,
       carbs: (updated.carbs / total) * 100,
+      fats: (updated.fats / total) * 100,
     };
 
     setSliders(updated);
   };
 
   const calculateMacros = () => {
-    const weightKg = parseFloat(weight) * 0.4536;
-    const goalWeightKg = parseFloat(goalWeight) * 0.4536;
-    const [feet, inches] = height.split("'");
-    const heightCm = parseInt(feet) * 30.48 + parseInt(inches || 0) * 2.54;
+    if (!weight || !goalWeight || !height || !age) return;
 
-    let bmr = 0;
-    if (sex === "male") {
-      bmr = 88.362 + 13.397 * weightKg + 4.799 * heightCm - 5.677 * parseInt(age);
-    } else {
-      bmr = 447.593 + 9.247 * weightKg + 3.098 * heightCm - 4.33 * parseInt(age);
-    }
+    const bmr =
+      sex === "male" ? 66 + 6.23 * weight + 12.7 * height - 6.8 * age : 655 + 4.35 * weight + 4.7 * height - 4.7 * age;
 
     const tdee = bmr * parseFloat(activityLevel);
 
@@ -68,113 +84,177 @@ export function MacroCalculator() {
       minCalories = tdee * 0.95;
       maxCalories = tdee * 1.05;
     }
-
     const avgCalories = (minCalories + maxCalories) / 2;
+    setCalorieRange(`${Math.round(minCalories)} - ${Math.round(maxCalories)}`);
 
-    let macroSplit;
-    if (customMacro) {
-      macroSplit = {
-        protein: sliders.protein / 100,
-        fats: sliders.fats / 100,
-        carbs: sliders.carbs / 100,
-      };
-    } else {
-      if (goal === "loss") {
-        macroSplit = { protein: 0.3, fats: 0.25, carbs: 0.45 };
-      } else if (goal === "gain") {
-        macroSplit = { protein: 0.25, fats: 0.2, carbs: 0.55 };
-      } else {
-        macroSplit = { protein: 0.25, fats: 0.25, carbs: 0.5 };
-      }
-    }
+    let macroSplit = customMacro
+      ? {
+          protein: sliders.protein / 100,
+          carbs: sliders.carbs / 100,
+          fats: sliders.fats / 100,
+        }
+      : goal === "loss"
+      ? { protein: 0.3, carbs: 0.45, fats: 0.25 }
+      : goal === "gain"
+      ? { protein: 0.25, carbs: 0.55, fats: 0.2 }
+      : { protein: 0.25, carbs: 0.5, fats: 0.25 };
 
-    const proteinGrams = parseFloat(goalWeight) * 1.0;
-    const proteinCalories = proteinGrams * 4;
-
-    const fatCalories = avgCalories * macroSplit.fats;
-    const fatGrams = fatCalories / 9;
-
+    const proteinCalories = avgCalories * macroSplit.protein;
     const carbCalories = avgCalories * macroSplit.carbs;
-    const carbGrams = carbCalories / 4;
+    const fatCalories = avgCalories * macroSplit.fats;
 
-    const totalCalories = proteinCalories + fatCalories + carbCalories;
-    const percents = {
-      protein: ((proteinCalories / totalCalories) * 100).toFixed(0),
-      fats: ((fatCalories / totalCalories) * 100).toFixed(0),
-      carbs: ((carbCalories / totalCalories) * 100).toFixed(0),
-    };
+    setProteinGrams(Math.round(proteinCalories / 4));
+    setCarbGrams(Math.round(carbCalories / 4));
+    setFatGrams(Math.round(fatCalories / 9));
 
-    setCalorieRange(`${minCalories.toFixed(0)}–${maxCalories.toFixed(0)}`);
-    setProtein(proteinGrams.toFixed(0));
-    setFats(fatGrams.toFixed(0));
-    setCarbs(carbGrams.toFixed(0));
-    setMacroPercents(percents);
+    setMacroPercents({
+      protein: ((proteinCalories / avgCalories) * 100).toFixed(0),
+      carbs: ((carbCalories / avgCalories) * 100).toFixed(0),
+      fats: ((fatCalories / avgCalories) * 100).toFixed(0),
+    });
   };
 
   useEffect(() => {
-    if (weight && goalWeight && height && age) {
-      calculateMacros();
-    }
+    calculateMacros();
   }, [sliders, weight, goalWeight, height, age, sex, activityLevel, goal, customMacro]);
 
   return (
-    <div>
-      <h1 className="m-3 pb-2">Calculate Your Macros</h1>
-      <div className="card p-3">
-        <form className="card-body">
-          <label>Current Weight (lbs):</label>
-          <input className="form-control" value={weight} onChange={(e) => setWeight(e.target.value)} />
+    <>
+      <style>{`
+        input[type="range"].form-range {
+          height: 8px;
+          border-radius: 5px;
+          background: linear-gradient(90deg, #4caf50, #2196f3, #ff9800);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+          background: #fff;
+          border: 2px solid #4caf50;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .progress-bar.bg-success {
+          background: linear-gradient(90deg, rgb(225, 105, 199), rgb(224, 188, 231));
+        }
+        .progress-bar.bg-info {
+          background: linear-gradient(90deg, rgb(62, 145, 186), rgb(166, 197, 222));
+        }
+        .progress-bar.bg-warning {
+          background: linear-gradient(90deg, rgb(127, 184, 83), rgb(180, 217, 99));
+        }
 
-          <label className="form-label mt-2">Goal Weight (lbs):</label>
-          <input className="form-control" value={goalWeight} onChange={(e) => setGoalWeight(e.target.value)} />
+        /* Larger macro bars */
+        .progress {
+          height: 40px;
+          border-radius: 12px;
+          overflow: hidden;
+          background-color: #f1f3f4;
+        }
+        .progress-bar {
+          font-weight: 600;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: width 0.5s ease-in-out;
+        }
+      `}</style>
 
-          <label className="form-label mt-2">Height (e.g. 5'10):</label>
-          <input className="form-control" value={height} onChange={(e) => setHeight(e.target.value)} />
+      <div className="container py-5 d-flex justify-content-center">
+        <div className="card shadow-lg p-4 rounded-4 macro-card" style={{ maxWidth: "900px", width: "100%" }}>
+          <h1 className="fw-bold text-center mb-4">Macro Calculator</h1>
 
-          <label className="form-label mt-2">Age:</label>
-          <input className="form-control" value={age} onChange={(e) => setAge(e.target.value)} />
+          {/* Inputs */}
+          <div className="row g-3">
+            <div className="col-md-6">
+              <input
+                type="number"
+                placeholder="Current Weight (lbs)"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+                className="form-control form-control-lg"
+              />
+            </div>
+            <div className="col-md-6">
+              <input
+                type="number"
+                placeholder="Goal Weight (lbs)"
+                value={goalWeight}
+                onChange={(e) => setGoalWeight(e.target.value)}
+                className="form-control form-control-lg"
+              />
+            </div>
+            <div className="col-md-6">
+              <input
+                type="text"
+                placeholder={`Height e.g. 5'5"`}
+                value={heightInput}
+                onChange={handleHeightChange}
+                className="form-control form-control-lg"
+              />
+            </div>
+            <div className="col-md-6">
+              <input
+                type="number"
+                placeholder="Age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                className="form-control form-control-lg"
+              />
+            </div>
+          </div>
 
-          <label className="form-label mt-2">Sex:</label>
-          <select value={sex} onChange={(e) => setSex(e.target.value)} className="form-select">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
+          {/* Sex */}
+          <div className="mt-3">
+            <label className="form-label">Sex</label>
+            <select className="form-select form-select-lg" value={sex} onChange={(e) => setSex(e.target.value)}>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
 
-          <label className="form-label mt-2">Activity Level:</label>
-          <select
-            value={activityLevel}
-            onChange={(e) => setActivityLevel(parseFloat(e.target.value))}
-            className="form-select"
-          >
-            <option value={1.2}>Sedentary</option>
-            <option value={1.375}>Light</option>
-            <option value={1.55}>Moderate</option>
-            <option value={1.725}>Active</option>
-            <option value={1.9}>Very Active</option>
-          </select>
+          {/* Activity Level */}
+          <div className="mt-3">
+            <label className="form-label">Select Activity Level</label>
+            <select
+              className="form-select form-select-lg"
+              value={activityLevel}
+              onChange={(e) => setActivityLevel(e.target.value)}
+            >
+              {Object.entries(activityMultipliers).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <label className="form-label mt-2">Weight Goal:</label>
-          <select value={goal} onChange={(e) => setGoal(e.target.value)} className="form-select">
-            <option value="loss">Weight Loss</option>
-            <option value="maintenance">Maintenance</option>
-            <option value="gain">Weight Gain</option>
-          </select>
+          {/* Weight Goal */}
+          <div className="mt-3">
+            <label className="form-label">Weight Goal</label>
+            <select className="form-select form-select-lg" value={goal} onChange={(e) => setGoal(e.target.value)}>
+              <option value="loss">Weight Loss</option>
+              <option value="maintenance">Maintenance</option>
+              <option value="gain">Weight Gain</option>
+            </select>
+          </div>
 
-          <div className="form-check mt-3">
+          {/* Custom Macro */}
+          {/* <div className="form-check mt-3">
             <input
               type="checkbox"
               className="form-check-input"
-              id="customMacro"
               checked={customMacro}
               onChange={(e) => setCustomMacro(e.target.checked)}
             />
-            <label className="form-check-label" htmlFor="customMacro">
-              Use Custom Macro Percentages
-            </label>
-          </div>
-
+            <label className="form-check-label">Use Custom Macro Percentages</label>
+          </div> */}
+          <br />
+          <h5 className="form-check-label">Use Custom Macro Percentages</h5>
+          <hr />
           {customMacro && (
-            <div className="mt-3">
+            <div className="mt-4">
               <label>Protein %: {sliders.protein.toFixed(0)}%</label>
               <input
                 type="range"
@@ -182,16 +262,6 @@ export function MacroCalculator() {
                 max="100"
                 value={sliders.protein}
                 onChange={(e) => handleSliderChange("protein", e.target.value)}
-                className="form-range"
-              />
-
-              <label>Fats %: {sliders.fats.toFixed(0)}%</label>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={sliders.fats}
-                onChange={(e) => handleSliderChange("fats", e.target.value)}
                 className="form-range"
               />
 
@@ -204,42 +274,42 @@ export function MacroCalculator() {
                 onChange={(e) => handleSliderChange("carbs", e.target.value)}
                 className="form-range"
               />
+
+              <label>Fats %: {sliders.fats.toFixed(0)}%</label>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={sliders.fats}
+                onChange={(e) => handleSliderChange("fats", e.target.value)}
+                className="form-range"
+              />
             </div>
           )}
-        </form>
 
-        {calorieRange && (
-          <div className="p-3">
-            <h4>Recommended Daily Intake: {calorieRange} kcal</h4>
-            <p>
-              Protein: {protein} g ({macroPercents.protein}%)
-            </p>
+          {/* Results */}
+          <div className="results-box p-4 mt-4 rounded-4">
+            <h3 className="fw-semibold text-center">Recommended Daily Intake</h3>
+            <p className="text-center fs-5">{calorieRange} kcal</p>
+
             <div className="progress mb-2">
               <div className="progress-bar bg-success" style={{ width: `${macroPercents.protein}%` }}>
-                {macroPercents.protein}%
+                Protein: {proteinGrams}g ({macroPercents.protein}%)
               </div>
             </div>
-
-            <p>
-              Carbs: {carbs} g ({macroPercents.carbs}%)
-            </p>
             <div className="progress mb-2">
               <div className="progress-bar bg-info" style={{ width: `${macroPercents.carbs}%` }}>
-                {macroPercents.carbs}%
+                Carbs: {carbGrams}g ({macroPercents.carbs}%)
               </div>
             </div>
-
-            <p>
-              Fats: {fats} g ({macroPercents.fats}%)
-            </p>
             <div className="progress mb-2">
               <div className="progress-bar bg-warning" style={{ width: `${macroPercents.fats}%` }}>
-                {macroPercents.fats}%
+                Fats: {fatGrams}g ({macroPercents.fats}%)
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
