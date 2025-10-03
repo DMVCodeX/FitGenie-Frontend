@@ -8,7 +8,7 @@ export function Info() {
           FitGenie is a cutting-edge fitness application built with Ruby on Rails, following MVC architecture and
           RESTful API principles. Designed to empower your nutrition journey with smart tools for your goals.
         </p>
-        <a
+        {/* <a
           href="https://fitgenie.netlify.app/macrocalculator"
           target="_blank"
           rel="noreferrer"
@@ -27,7 +27,7 @@ export function Info() {
             height="30"
             className="ms-2"
           />
-        </a>
+        </a> */}
       </div>
 
       {/* Features Grid */}
@@ -59,6 +59,14 @@ export function Info() {
                   style={{ maxHeight: "150px" }}
                 />
                 <p className="mt-2">Drag sliders to instantly adjust macro breakdown!</p>
+                <a
+                  href="https://fitgenie.netlify.app/macrocalculator"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-light btn-lg mt-2"
+                >
+                  Go to Macro Calculator
+                </a>
               </div>
             </div>
           </div>
@@ -88,6 +96,9 @@ export function Info() {
                   style={{ maxHeight: "150px" }}
                 />
                 <p className="mt-2">Explore expert nutrition tips instantly!</p>
+                <a href="/nutrition" className="btn btn-light btn-lg mt-2">
+                  View Nutrition Guides
+                </a>
               </div>
             </div>
           </div>
@@ -152,12 +163,12 @@ export function Info() {
           color: #f8f9fa;
         }
 
-        /* Fixed premium gradients */
+        /* Premium gradients */
         .macro-card {
-          background: linear-gradient(135deg,rgb(69, 152, 184),rgb(129, 189, 221)); /* deep blue gradient */
+          background: linear-gradient(135deg,rgb(69, 152, 184),rgb(129, 189, 221));
         }
         .nutrition-card {
-          background: linear-gradient(135deg,rgb(124, 185, 149),rgb(148, 219, 192)); /* elegant green-black blend */
+          background: linear-gradient(135deg,rgb(124, 185, 149),rgb(148, 219, 192));
         }
       `}</style>
     </div>
